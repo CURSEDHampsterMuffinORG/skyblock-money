@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <title>Skyblock Money</title>
+    <style>
+      html {
+        background: rgb(233, 209, 217) url(/index.png) no-repeat center center fixed;
+        background-size: auto;
+        background-size: cover;
+        overflow: hidden;
+        font-family: Lucida Sans, Helvetica, sans-serif;
+        font-size: 1.1em;
+        margin-left: max(calc(40vw - 20vh), 8px);
+        margin-top: max(min(calc(40vw - 20vh), 27vh), 8px);
+        margin-bottom: max(min(calc(40vw - 20vh), 27vh), 8px);
+        min-height: calc(100vh - (max(min(calc(40vw - 20vh), 27vh), 8px) * 2));
+      }
+      input[type="text"], button {
+        background: #0004;
+        color: white;
+        font-size: 0.8em;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        border: none;
+        border-radius: 5px;
+      }
+      button {
+        cursor: pointer;
+      }
+      .card {
+        position: absolute;
+        transition: margin 1s;
+      }
+      .card.hidden-left {
+        margin-left: -100vw;
+      }
+      .card.hidden-right {
+        margin-left: 100vw;
+      }
+      .card h1 {
+        margin: 0;
+      }
+      .largeLoader {
+        height: 10px;
+        background: #0005;
+        width: calc(40vh - 10vw);
+        overflow: hidden;
+      }
+      .smallLoader {
+        height: 10px;
+        background: #fff5;
+        width: calc(20vh - 5vw);
+        animation: load 2s infinite;
+      }
+      @keyframes load {
+        0% {
+          margin-left: calc((20vh - 5vw) * -1);
+        }
+        100% {
+          margin-left: calc((20vh - 5vw) * 2);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" id="card1">
+      <h1>Welcome to Skyblock Money</h1>
+      <p>Get personalized money making methods and flip your way up.
+        Let's start with who you are.</p>
+      <input type="text" id="username">
+      <button class="next">Next</button>
+    </div>
+    <div class="card hidden-right" id="card2">
+      <h1>Getting your data from the Hypixel API...</h1>
+      <div class="loader largeLoader"><div class="loader smallLoader"></div></div>
+    </div>
+    <div class="card hidden-right" id="card3">
+      <h1>You need to enable more API permissions.</h1>
+      <p>[this will be added later, maybe add a video?]</p>
+    </div>
+    <div class="card hidden-right" id="card3">
+      <h1>You need to enable more API permissions.</h1>
+      <p>[this will be added later, maybe add a video?]</p>
+    </div>
+    <template>
+      <div class="card hidden-right">
+        <h1></h1>
+        <p></p>
+      </div>
+    </template>
+    <script src="index.js"></script>
+  </body>
+</html>
