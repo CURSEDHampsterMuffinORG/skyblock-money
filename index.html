@@ -62,13 +62,34 @@
           margin-left: calc((20vh - 5vw) * 2);
         }
       }
+      .profit {
+        color: #0508;
+      }
+      .moneyInfoContainer {
+        width: min(calc(60vw + 20vh), calc(100vw - 8px));
+      }
+      .moneyInfo {
+        background: #0004;
+        color: white;
+        width: calc(49% - 40px);
+        display: inline-block;
+        padding: 10px;
+        backdrop-filter: blur(10px);
+        border-radius: 5px;
+      }
+      .buyInfo {
+        margin: 10px 10px 10px 0;
+      }
+      .sellInfo {
+        margin: 10px 10px 10px 10px;
+      }
     </style>
   </head>
   <body>
     <div class="card" id="card1">
       <h1>Welcome to Skyblock Money</h1>
       <p>Get personalized money making methods and flip your way up.
-        Let's start with who you are.</p>
+         Let's start with who you are.</p>
       <input type="text" id="username">
       <button class="next">Next</button>
     </div>
@@ -78,16 +99,22 @@
     </div>
     <div class="card hidden-right" id="card3">
       <h1>You need to enable more API permissions.</h1>
-      <p>[this will be added later, maybe add a video?]</p>
-    </div>
-    <div class="card hidden-right" id="card3">
-      <h1>You need to enable more API permissions.</h1>
-      <p>[this will be added later, maybe add a video?]</p>
+      <p>Skyblock Money needs access to how much money is in your bank
+         and what collections you have unlocked.</p>
     </div>
     <template>
       <div class="card hidden-right">
-        <h1></h1>
-        <p></p>
+        <h1 class="moneyMethod"><span class="item"></span> <span class="price"></span></h1>
+        <div class="moneyInfoContainer">
+          <div class="moneyInfo buyInfo">
+            <h3>Buying from <span class="buySource"> <span class="price"></span></h3>
+            <p class="buyDetails"></p>
+          </div>
+          <div class="moneyInfo sellInfo">
+            <h3>Selling to <span class="sellSource"> <span class="price"></span></h3>
+            <p class="sellDetails"></p>
+          </div>
+        </div>
       </div>
     </template>
     <script src="index.js"></script>
