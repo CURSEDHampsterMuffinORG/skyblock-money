@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <title>Skyblock Money</title>
     <style>
@@ -33,7 +33,7 @@
       .card {
         position: absolute;
         transition: margin 1s;
-        width: calc(100vw - 16px);
+        width: calc(100vw - max(calc(40vw - 20vh), 16px));
       }
       .card.hidden-left {
         margin-left: -100vw;
@@ -54,7 +54,7 @@
         height: 10px;
         background: #fff5;
         width: calc(20vh - 5vw);
-        animation: load 2s infinite;
+        animation: load 1s infinite;
       }
       @keyframes load {
         0% {
@@ -101,6 +101,7 @@
          Let's start with who you are.</p>
       <input type="text" id="username">
       <button class="next">Next</button>
+      <p><i>psst!</i> join the <a href="https://discord.gg/KudKngrb7X">discord</a></p>
     </div>
     <div class="card hidden-right" id="card2">
       <h1>Getting your data from the Hypixel API...</h1>
@@ -117,6 +118,12 @@
          It could be there was a bug in the code or the Hypixel API is acting up.
          Join the <a href="https://discord.gg/KudKngrb7X">Discord</a> to chat about it.</p>
     </div>
+    <div class="card hidden-right" id="card5">
+      <h1>You've gone through all of the available flips!</h1>
+      <p>No more flips are available right now.</p>
+      <button class="back">Back</button>
+      <button class="reload">Reload</button>
+    </div>
     <template>
       <div class="card money-card hidden-right">
         <h1 class="moneyMethod"><span class="item"></span> <span class="profit"></span></h1>
@@ -130,6 +137,7 @@
             <p class="sellDetails"></p>
           </div>
         </div>
+        <button class="back">Back</button>
         <button class="next">Next</button>
       </div>
     </template>

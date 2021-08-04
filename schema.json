@@ -1,0 +1,44 @@
+[
+  {
+    "item": "Aspect of the End",
+    "profit": "$37,816",
+    "buying": {
+      "source": "Bazaar",
+      "cost": "$100,784",
+      "details": "32x Enchanted Eye of Ender, 1x Enchanted Diamond"
+    },
+    "selling": {
+      "source": "Auction House as BIN",
+      "cost": "$138,600",
+      "details": "Undercut the lowest BIN of $140,000 by $1,400"
+    }
+  },
+  {
+    "item": "Enchanted Flint",
+    "profit": "$11,718",
+    "buying": {
+      "source": "NPC",
+      "cost": "$3,840",
+      "details": "640x Flint from Pat in the Graveyard"
+    },
+    "selling": {
+      "source": "Bazaar",
+      "cost": "$15,018",
+      "details": "4x Enchanted Flint"
+    }
+  },
+  {
+    "item": "Enchanted Quartz",
+    "profit": "$51,152",
+    "buying": {
+      "source": "NPC",
+      "cost": "$20,480",
+      "details": "640x Quartz Block from Builder in the Village"
+    },
+    "selling": {
+      "source": "Bazaar",
+      "cost": "$71,632",
+      "details": "16x Enchanted Quartz"
+    }
+  }
+]
