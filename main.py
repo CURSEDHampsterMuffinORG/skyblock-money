@@ -28,9 +28,11 @@ def get_flips(username):
         calculated_flips.append(flip_data)
   return json.dumps(
     sorted(
-      calculated_flips, key=lambda flip_data: int(flip_data["profit"].replace(",", ""))
+      calculated_flips,
+      key=lambda flip_data: int(flip_data["profit"].replace(",", "")),
+      reverse=True,
     )
-  )  # TODO: Sort by profit
+  )
 
 
 @app.route("/index.png")
