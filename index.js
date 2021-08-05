@@ -18,10 +18,10 @@ document.querySelector("#card1 button").onclick = () => {
     console.log(resp.status);
     if (resp.status == 200) {
       return resp.json();
-    }/* else {
+    } else {
       document.querySelector("#card2").classList.add("hidden-left");
       document.querySelector("#card4").classList.remove("hidden-right");
-    }*/
+    }
   }).then((resp) => {
     if (resp == undefined) return;
     window.flips = resp;
