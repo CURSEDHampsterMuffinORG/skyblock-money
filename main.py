@@ -1,5 +1,6 @@
 from flask import Flask, Response
-import os
+import os, json
+import api, flips
 
 app = Flask(__name__, template_folder=".")
 
@@ -14,6 +15,22 @@ def send_index_code():
   return Response(
     open("index.js", "rb").read().decode(), mimetype="application/javascript"
   )
+
+
+@app.route("/flips-for/<username>")
+def get_flips(username):
+  user = api.User(username)
+  calculated_flips = []
+  for flip in flips.flips:
+    if isinstance(flip, api.NPCBazaarFlip):
+      flip_data = flip.checkFlip(user)
+      if int(flip_data["profit"].replace(",", "")) > 0:
+        calculated_flips.append(flip_data)
+  return json.dumps(
+    sorted(
+      calculated_flips, key=lambda flip_data: int(flip_data["profit"].replace(",", ""))
+    )
+  )  # TODO: Sort by profit
 
 
 @app.route("/index.png")

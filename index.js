@@ -18,10 +18,10 @@ document.querySelector("#card1 button").onclick = () => {
     console.log(resp.status);
     if (resp.status == 200) {
       return resp.json();
-    } else {
+    }/* else {
       document.querySelector("#card2").classList.add("hidden-left");
       document.querySelector("#card4").classList.remove("hidden-right");
-    }
+    }*/
   }).then((resp) => {
     if (resp == undefined) return;
     window.flips = resp;
@@ -37,14 +37,14 @@ function renderFlip(flip) {
   var clone = document.querySelector("template").content.cloneNode(true);
   // Process the flip data
   clone.querySelector(".item").innerHTML = flip["item"];
-  clone.querySelector(".profit").innerHTML = flip["profit"];
+  clone.querySelector(".profit").innerHTML = `$${flip["profit"]}`;
   // Process the buying data
   clone.querySelector(".buyInfo .buySource").innerHTML = flip["buying"]["source"];
-  clone.querySelector(".buyInfo .price").innerHTML = flip["buying"]["cost"];
+  clone.querySelector(".buyInfo .price").innerHTML = `$${flip["buying"]["cost"]}`;
   clone.querySelector(".buyInfo .buyDetails").innerHTML = flip["buying"]["details"];
   // Process the selling data
   clone.querySelector(".sellInfo .sellSource").innerHTML = flip["selling"]["source"];
-  clone.querySelector(".sellInfo .price").innerHTML = flip["selling"]["cost"];
+  clone.querySelector(".sellInfo .price").innerHTML = `$${flip["selling"]["cost"]}`;
   clone.querySelector(".sellInfo .sellDetails").innerHTML = flip["selling"]["details"];
   // Finish rendering
   var renderedFlip = clone.children[0];
