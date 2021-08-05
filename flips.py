@@ -1,4 +1,4 @@
-from api import NPCBazaarFlip
+from api import NPCBazaarFlip, BazaarNPCFlip
 
 flips = [
   # Adventurer
@@ -26,8 +26,9 @@ flips = [
   NPCBazaarFlip("Sugar Cane", "SUGAR_CANE", 5, "Farm Merchant in the Central Hub"),
   NPCBazaarFlip("Pumpkin", "PUMPKIN", 8, "Farm Merchant in the Central Hub"),
   NPCBazaarFlip("Red Mushroom", "RED_MUSHROOM", 12, "Farm Merchant in the Central Hub"),
-  NPCBazaarFlip("Brown Mushroom", "BROWN_MUSHROOM", 12, "Farm Merchant in the Central Hub"),
-  # i continue here
+  NPCBazaarFlip(
+    "Brown Mushroom", "BROWN_MUSHROOM", 12, "Farm Merchant in the Central Hub"
+  ),
   # Alchemist
   NPCBazaarFlip("Nether Wart", "NETHER_STALK", 10, "Alchemist in the Purple House"),
   NPCBazaarFlip("Rabbit's Foot", "RABBIT_FOOT", 10, "Alchemist in the Purple House"),
@@ -54,4 +55,8 @@ flips = [
   NPCBazaarFlip("Obsidian", "OBSIDIAN", 50, "Pearl Dealer on the End Island"),
   # Season of Jerry
   NPCBazaarFlip("Ice Bait", "ICE_BAIT", 12, "Sherry on the Season of Jerry Island"),
+# ===================================================================================
+# |                                Bazaar to NPC                                    |
+# ===================================================================================
+  BazaarNPCFlip("Cactus", "CACTUS", 1.0)
 ]

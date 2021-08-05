@@ -22,10 +22,9 @@ def get_flips(username):
   user = api.User(username)
   calculated_flips = []
   for flip in flips.flips:
-    if isinstance(flip, api.NPCBazaarFlip):
-      flip_data = flip.checkFlip(user)
-      if flip_data is not None and int(flip_data["profit"].replace(",", "")) > 0:
-        calculated_flips.append(flip_data)
+    flip_data = flip.checkFlip(user)
+    if flip_data is not None and int(flip_data["profit"].replace(",", "")) > 0:
+      calculated_flips.append(flip_data)
   return json.dumps(
     sorted(
       calculated_flips,
