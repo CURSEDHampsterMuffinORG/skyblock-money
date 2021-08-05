@@ -56,3 +56,5 @@ class NPCBazaarFlip:
           "details": f"{amount_available}x {self.friendly_name}",
         },
       }
+    else:
+      print(self.friendly_name, "is unaffordable")
