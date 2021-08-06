@@ -25,6 +25,13 @@ def get_flips(username):
     flip_data = flip.checkFlip(user)
     if flip_data is not None and int(flip_data["profit"].replace(",", "")) > 0:
       calculated_flips.append(flip_data)
+    elif flip_data is not None:
+      #print(
+      #flip_data["item"],
+      #f"is not profitable",
+      #f"({flip_data['buying']['cost']} to {flip_data['selling']['cost']})",
+      #)
+      ...
   return json.dumps(
     sorted(
       calculated_flips,

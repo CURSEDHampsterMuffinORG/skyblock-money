@@ -80,12 +80,14 @@ class BazaarNPCFlip:
         "buying": {
           "source": "Bazaar",
           "cost": "{:,}".format(cost),
-          "details": f"{amount_available}x {self.friendly_name}" + f" for {round(bazaar_cost, 1)} each",
+          "details": f"{amount_available}x {self.friendly_name}"
+          + f" for {round(bazaar_cost, 1)} each",
         },
         "selling": {
           "source": "NPC",
           "cost": "{:,}".format(money),
-          "details": f"{amount_available}x {self.friendly_name}" + f" for {round(self.npc_sell, 1)} each",
+          "details": f"{amount_available}x {self.friendly_name}"
+          + f" for {round(self.npc_sell, 1)} each",
         },
       }
     else:

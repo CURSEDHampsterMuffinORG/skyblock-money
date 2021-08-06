@@ -55,8 +55,41 @@ flips = [
   NPCBazaarFlip("Obsidian", "OBSIDIAN", 50, "Pearl Dealer on the End Island"),
   # Season of Jerry
   NPCBazaarFlip("Ice Bait", "ICE_BAIT", 12, "Sherry on the Season of Jerry Island"),
-# ===================================================================================
-# |                                Bazaar to NPC                                    |
-# ===================================================================================
-  BazaarNPCFlip("Cactus", "CACTUS", 1.0)
+  # ===================================================================================
+  # |                                Bazaar to NPC                                    |
+  # ===================================================================================
+  # Wheat
+  BazaarNPCFlip("Wheat", "WHEAT", 1.0),
+  BazaarNPCFlip("Enchanted Bread", "ENCHANTED_BREAD", 60.0),
+  BazaarNPCFlip("Hay Bale", "HAY_BLOCK", 9.0),
+  BazaarNPCFlip("Enchanted Hay Bale", "ENCHANTED_HAY_BLOCK", 1300.0),
+  BazaarNPCFlip("Tightly-Tied Hay Bale", "TIGHTLY_TIED_HAY_BALE", 187200.0),
+  BazaarNPCFlip("Seeds", "SEEDS", 0.5),
+  BazaarNPCFlip("Enchanted Seeds", "ENCHANTED_SEEDS", 80.0),
+  # Carrots
+  BazaarNPCFlip("Carrot", "CARROT_ITEM", 1.0),
+  BazaarNPCFlip("Enchanted Carrot", "ENCHANTED_CARROT", 160.0),
+  BazaarNPCFlip("Enchanted Carrot on a Stick", "ENCHANTED_CARROT_STICK", 10240.0),
+  BazaarNPCFlip("Enchanted Golden Carrot", "ENCHANTED_GOLDEN_CARROT", 20608.0),
+  # Potatoes and pumpkins
+  BazaarNPCFlip("Potato", "POTATO_ITEM", 1.0),
+  BazaarNPCFlip("Enchanted Potato", "ENCHANTED_POTATO", 160.0),
+  BazaarNPCFlip("Enchanted Baked Potato", "ENCHANTED_BAKED_POTATO", 25600.0),
+  BazaarNPCFlip("Pumpkin", "PUMPKIN", 4.0),
+  BazaarNPCFlip("Enchanted Pumpkin", "ENCHANTED_PUMPKIN", 640.0),
+  # Melons
+  BazaarNPCFlip("Melon", "MELON", 0.5),
+  BazaarNPCFlip("Enchanted Melon", "ENCHANTED_MELON", 160.0),
+  BazaarNPCFlip("Enchanted Glistering Melon", "ENCHANTED_GLISTERING_MELON", 1024.0),
+  BazaarNPCFlip("Enchanted Melon Block", "ENCHANTED_MELON_BLOCK", 25600.0),
+  # Red mushrooms
+  BazaarNPCFlip("Red Mushroom", "RED_MUSHROOM", 4),
+  BazaarNPCFlip("Enchanted Red Mushroom", "ENCHANTED_RED_MUSHROOM", 640.0),
+  BazaarNPCFlip("Red Mushroom Block", "HUGE_MUSHROOM_2", 4.0),
+  BazaarNPCFlip("Enchanted Red Mushroom Block", "ENCHANTED_HUGE_MUSHROOM_2", 2300.0),
+  # Brown mushrooms
+  BazaarNPCFlip("Brown Mushroom", "BROWN_MUSHROOM", 4),
+  BazaarNPCFlip("Enchanted Brown Mushroom", "ENCHANTED_BROWN_MUSHROOM", 640.0),
+  BazaarNPCFlip("Brown Mushroom Block", "HUGE_MUSHROOM_1", 4.0),
+  BazaarNPCFlip("Enchanted Brown Mushroom Block", "ENCHANTED_HUGE_MUSHROOM_1", 2300.0),
 ]
