@@ -14,7 +14,9 @@ class User:
       headers={"Api-Key": API_KEY},
     )
     self.uuid = uuid
-    self.profiles = profiles.json()["profiles"][0]
+    self.profiles = max(
+      profiles.json()["profiles"], key=lambda prof: prof["members"][uuid]["last_save"]
+    )
     self.bank = (
       self.profiles["banking"]["balance"]
       + self.profiles["members"][self.uuid]["coin_purse"]
@@ -76,7 +78,11 @@ class BazaarNPCFlip:
     totalVolume = availableVolume + wantedVolume
     bazaar_cost = (
       bazaar[self.id]["quick_status"]["buyPrice"] * wantedVolume / totalVolume
-      + bazaar[self.id]["sell_summary"][0]["pricePerUnit"] * availableVolume / totalVolume
+      + (
+        bazaar[self.id]["sell_summary"] or [bazaar[self.id]["quick_status"]["buyPrice"]]
+      )[0]["pricePerUnit"]
+      * availableVolume
+      / totalVolume
     )
     if bank >= bazaar_cost:
       amount_available = min(math.floor(bank / bazaar_cost), 2240)
