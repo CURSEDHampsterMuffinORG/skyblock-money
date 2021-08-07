@@ -79,7 +79,10 @@ class BazaarNPCFlip:
     bazaar_cost = (
       bazaar[self.id]["quick_status"]["buyPrice"] * wantedVolume / totalVolume
       + (
-        bazaar[self.id]["sell_summary"] or [bazaar[self.id]["quick_status"]["buyPrice"]]
+        bazaar[self.id]["sell_summary"]
+        or [
+          bazaar[self.id]["quick_status"]["buyPrice"],
+        ]
       )[0]["pricePerUnit"]
       * availableVolume
       / totalVolume
