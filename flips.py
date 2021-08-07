@@ -162,4 +162,24 @@ flips = [
   BazaarNPCFlip("Lapis Lazuli", "INK_SACK:4", 1.0),
   BazaarNPCFlip("Enchanted Lapis Lazuli", None, 160.0),
   BazaarNPCFlip("Enchanted Lapis Block", "ENCHANTED_LAPIS_LAZULI_BLOCK", 25600.0),
+  # Gemstone time; im gonna be kinda lazy
 ]
+gemstone_types = ["RUBY", "AMETHYST", "JADE", "SAPPHIRE", "AMBER", "TOPAZ", "JASPER"]
+for type in gemstone_types:
+  flips.append(
+    BazaarNPCFlip(f"Rough {type.capitalize()} Gemstone", f"ROUGH_{type}_GEM", 8)
+  )
+  flips.append(
+    BazaarNPCFlip(f"Flawed {type.capitalize()} Gemstone", f"FLAWED_{type}_GEM", 640)
+  )
+  flips.append(
+    BazaarNPCFlip(f"Fine {type.capitalize()} Gemstone", f"FINE_{type}_GEM", 25600)
+  )
+  flips.append(
+    BazaarNPCFlip(
+      f"Flawless {type.capitalize()} Gemstone", f"FLAWLESS_{type}_GEM", 512000
+    )
+  )
+  # Tell me in the Discord if you know how much Perfect sells to NPCs for
+more_flips = []
+flips += more_flips

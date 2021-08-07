@@ -55,7 +55,7 @@ def get_flips(username, code):
     )
   for flip in flips.flips:
     flip_data = flip.checkFlip(user)
-    profit_amount = int(flip_data["profit"].replace(",", ""))
+    profit_amount = int(flip_data["profit"].replace(",", "")) if flip_data else None
     if (
       flip_data is not None
       and profit_amount > 0
@@ -63,11 +63,11 @@ def get_flips(username, code):
     ):
       calculated_flips.append(flip_data)
     elif flip_data is not None and (profit_amount < 100000 or verified_discord):
-      # print(
-      # flip_data["item"],
-      # f"is not profitable",
-      # f"({flip_data['buying']['cost']} to {flip_data['selling']['cost']})",
-      # )
+      #print(
+      #flip_data["item"],
+      #f"is not profitable",
+      #f"({flip_data['buying']['cost']} to {flip_data['selling']['cost']})",
+      #)
       ...
   return json.dumps(
     sorted(

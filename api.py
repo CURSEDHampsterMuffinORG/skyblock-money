@@ -71,7 +71,13 @@ class BazaarNPCFlip:
   def checkFlip(self, user):
     bank = user.bank
     bazaar = user.bazaar
-    bazaar_cost = bazaar[self.id]["quick_status"]["buyPrice"]
+    availableVolume = bazaar[self.id]["quick_status"]["buyVolume"]
+    wantedVolume = bazaar[self.id]["quick_status"]["sellVolume"]
+    totalVolume = availableVolume + wantedVolume
+    bazaar_cost = (
+      bazaar[self.id]["quick_status"]["buyPrice"] * wantedVolume / totalVolume
+      + bazaar[self.id]["sell_summary"][0]["pricePerUnit"] * availableVolume / totalVolume
+    )
     if bank >= bazaar_cost:
       amount_available = min(math.floor(bank / bazaar_cost), 2240)
       cost = round(bazaar_cost * amount_available)
