@@ -59,37 +59,107 @@ flips = [
   # |                                Bazaar to NPC                                    |
   # ===================================================================================
   # Wheat
-  BazaarNPCFlip("Wheat", "WHEAT", 1.0),
-  BazaarNPCFlip("Enchanted Bread", "ENCHANTED_BREAD", 60.0),
+  BazaarNPCFlip("Wheat", None, 1.0),
+  BazaarNPCFlip("Enchanted Bread", None, 60.0),
   BazaarNPCFlip("Hay Bale", "HAY_BLOCK", 9.0),
   BazaarNPCFlip("Enchanted Hay Bale", "ENCHANTED_HAY_BLOCK", 1300.0),
   BazaarNPCFlip("Tightly-Tied Hay Bale", "TIGHTLY_TIED_HAY_BALE", 187200.0),
-  BazaarNPCFlip("Seeds", "SEEDS", 0.5),
-  BazaarNPCFlip("Enchanted Seeds", "ENCHANTED_SEEDS", 80.0),
+  BazaarNPCFlip("Seeds", None, 0.5),
+  BazaarNPCFlip("Enchanted Seeds", None, 80.0),
   # Carrots
   BazaarNPCFlip("Carrot", "CARROT_ITEM", 1.0),
-  BazaarNPCFlip("Enchanted Carrot", "ENCHANTED_CARROT", 160.0),
+  BazaarNPCFlip("Enchanted Carrot", None, 160.0),
   BazaarNPCFlip("Enchanted Carrot on a Stick", "ENCHANTED_CARROT_STICK", 10240.0),
-  BazaarNPCFlip("Enchanted Golden Carrot", "ENCHANTED_GOLDEN_CARROT", 20608.0),
+  BazaarNPCFlip("Enchanted Golden Carrot", None, 20608.0),
   # Potatoes and pumpkins
   BazaarNPCFlip("Potato", "POTATO_ITEM", 1.0),
-  BazaarNPCFlip("Enchanted Potato", "ENCHANTED_POTATO", 160.0),
-  BazaarNPCFlip("Enchanted Baked Potato", "ENCHANTED_BAKED_POTATO", 25600.0),
-  BazaarNPCFlip("Pumpkin", "PUMPKIN", 4.0),
-  BazaarNPCFlip("Enchanted Pumpkin", "ENCHANTED_PUMPKIN", 640.0),
+  BazaarNPCFlip("Enchanted Potato", None, 160.0),
+  BazaarNPCFlip("Enchanted Baked Potato", None, 25600.0),
+  BazaarNPCFlip("Pumpkin", None, 4.0),
+  BazaarNPCFlip("Enchanted Pumpkin", None, 640.0),
+  BazaarNPCFlip("Polished Pumpkin", "POLISHED_PUMPKIN", 102400.0),
   # Melons
-  BazaarNPCFlip("Melon", "MELON", 0.5),
-  BazaarNPCFlip("Enchanted Melon", "ENCHANTED_MELON", 160.0),
-  BazaarNPCFlip("Enchanted Glistering Melon", "ENCHANTED_GLISTERING_MELON", 1024.0),
-  BazaarNPCFlip("Enchanted Melon Block", "ENCHANTED_MELON_BLOCK", 25600.0),
+  BazaarNPCFlip("Melon", None, 0.5),
+  BazaarNPCFlip("Enchanted Melon", None, 160.0),
+  BazaarNPCFlip("Enchanted Glistering Melon", None, 1024.0),
+  BazaarNPCFlip("Enchanted Melon Block", None, 25600.0),
   # Red mushrooms
-  BazaarNPCFlip("Red Mushroom", "RED_MUSHROOM", 4),
-  BazaarNPCFlip("Enchanted Red Mushroom", "ENCHANTED_RED_MUSHROOM", 640.0),
+  BazaarNPCFlip("Red Mushroom", None, 4.0),
+  BazaarNPCFlip("Enchanted Red Mushroom", None, 640.0),
   BazaarNPCFlip("Red Mushroom Block", "HUGE_MUSHROOM_2", 4.0),
   BazaarNPCFlip("Enchanted Red Mushroom Block", "ENCHANTED_HUGE_MUSHROOM_2", 2300.0),
   # Brown mushrooms
-  BazaarNPCFlip("Brown Mushroom", "BROWN_MUSHROOM", 4),
-  BazaarNPCFlip("Enchanted Brown Mushroom", "ENCHANTED_BROWN_MUSHROOM", 640.0),
+  BazaarNPCFlip("Brown Mushroom", None, 4.0),
+  BazaarNPCFlip("Enchanted Brown Mushroom", None, 640.0),
   BazaarNPCFlip("Brown Mushroom Block", "HUGE_MUSHROOM_1", 4.0),
   BazaarNPCFlip("Enchanted Brown Mushroom Block", "ENCHANTED_HUGE_MUSHROOM_1", 2300.0),
+  # Cocoa and cactus
+  BazaarNPCFlip("Cocoa Beans", "INK_SACK:3", 3.0),
+  BazaarNPCFlip("Enchanted Cocoa Beans", "ENCHANTED_COCOA", 480.0),
+  BazaarNPCFlip("Enchanted Cookie", None, 61472.0),
+  BazaarNPCFlip("Cactus", None, 1.0),
+  BazaarNPCFlip("Enchanted Cactus Green", None, 160.0),
+  BazaarNPCFlip("Enchanted Cactus", None, 25600.0),
+  # Sugar cane
+  BazaarNPCFlip("Sugar Cane", None, 2.0),
+  BazaarNPCFlip("Enchanted Sugar", None, 320.0),
+  BazaarNPCFlip("Enchanted Paper", None, 384.0),
+  BazaarNPCFlip("Enchanted Sugar Cane", None, 51200.0),
+  # Leather and beef
+  BazaarNPCFlip("Leather", None, 3.0),
+  BazaarNPCFlip("Enchanted Leather", None, 1700.0),
+  BazaarNPCFlip("Raw Beef", None, 4.0),
+  BazaarNPCFlip("Enchanted Raw Beef", None, 640.0),
+  # Pork
+  BazaarNPCFlip("Raw Porkchop", "PORK", 5.0),
+  BazaarNPCFlip("Enchanted Pork", None, 800.0),
+  BazaarNPCFlip("Enchanted Grilled Pork", None, 128000.0),
+  # Cluck bois
+  BazaarNPCFlip("Raw Chicken", None, 4.0),
+  BazaarNPCFlip("Enchanted Raw Chicken", None, 640.0),
+  BazaarNPCFlip("Enchanted Egg", None, 432.0),
+  BazaarNPCFlip("Enchanted Cake", None, 2700.0),
+  BazaarNPCFlip("Feather", None, 3.0),
+  BazaarNPCFlip("Enchanted Feather", None, 480.0),
+  # Mutton
+  BazaarNPCFlip("Mutton", None, 5.0),
+  BazaarNPCFlip("Enchanted Mutton", None, 800.0),
+  BazaarNPCFlip("Enchanted Cooked Mutton", None, 128000.0),
+  # Stupid jump bois
+  BazaarNPCFlip("Raw Rabbit", "RABBIT", 4.0),
+  BazaarNPCFlip("Enchanted Raw Rabbit", "ENCHANTED_RABBIT", 640.0),
+  BazaarNPCFlip("Rabbit's Foot", "RABBIT_FOOT", 5.0),
+  BazaarNPCFlip("Enchanted Rabbit Foot", None, 800.0),
+  BazaarNPCFlip("Rabbit Hide", None, 5.0),
+  BazaarNPCFlip("Enchanted Rabbit Hide", None, 2880.0),
+  # Wart
+  BazaarNPCFlip("Nether Wart", "NETHER_STALK", 3.0),
+  BazaarNPCFlip("Enchanted Nether Wart", "ENCHANTED_NETHER_STALK", 480.0),
+  BazaarNPCFlip("Mutant Nether Wart", "MUTANT_NETHER_STALK", 76800.0),
+  # Mining time
+  # Cobble
+  BazaarNPCFlip("Cobblestone", None, 1.0),
+  BazaarNPCFlip("Enchanted Cobblestone", None, 160.0),
+  # Coal
+  BazaarNPCFlip("Coal", None, 2.0),
+  BazaarNPCFlip("Enchanted Coal", None, 320.0),
+  BazaarNPCFlip("Enchanted Charcoal", None, 320.0),
+  BazaarNPCFlip("Enchanted Block of Coal", "ENCHANTED_COAL_BLOCK", 51000.0),
+  # Iron
+  BazaarNPCFlip("Iron Ingot", None, 3.0),
+  BazaarNPCFlip("Enchanted Iron", None, 480.0),
+  BazaarNPCFlip("Enchanted Iron Block", None, 76800.0),
+  # Gold
+  BazaarNPCFlip("Gold Ingot", None, 4.0),
+  BazaarNPCFlip("Enchanted Gold", None, 640.0),
+  BazaarNPCFlip("Enchanted Gold Block", None, 102000.0),
+  # Diamond
+  BazaarNPCFlip("Diamond", None, 8.0),
+  BazaarNPCFlip("Enchanted Diamond", None, 1280.0),
+  BazaarNPCFlip("Enchanted Diamond Block", None, 204800.0),
+  BazaarNPCFlip("Refined Diamond", None, 4096.0),
+  # Lapis
+  BazaarNPCFlip("Lapis Lazuli", "INK_SACK:4", 1.0),
+  BazaarNPCFlip("Enchanted Lapis Lazuli", None, 160.0),
+  BazaarNPCFlip("Enchanted Lapis Block", "ENCHANTED_LAPIS_LAZULI_BLOCK", 25600.0),
 ]

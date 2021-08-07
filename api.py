@@ -63,6 +63,8 @@ class NPCBazaarFlip:
 class BazaarNPCFlip:
   def __init__(self, friendly_name, id, npc_sell):
     self.friendly_name = friendly_name
+    if id is None:
+      id = friendly_name.upper().replace(" ", "_")
     self.id = id
     self.npc_sell = npc_sell
 
