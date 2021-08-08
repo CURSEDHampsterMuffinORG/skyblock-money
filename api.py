@@ -1,6 +1,8 @@
-import os, requests, math
+import os, requests, math, json
 
 API_KEY = os.environ["API_KEY"]
+ITEMS = json.load(open("skyblock_items.json"))
+ITEMS = {friendly["name"]: id for id, friendly in ITEMS.items()}
 
 
 class User:
@@ -63,10 +65,16 @@ class NPCBazaarFlip:
 
 
 class BazaarNPCFlip:
-  def __init__(self, friendly_name, id, npc_sell):
+  def __init__(self, friendly_name, npc_sell, id=None):
     self.friendly_name = friendly_name
     if id is None:
-      id = friendly_name.upper().replace(" ", "_")
+      if friendly_name in ITEMS:
+        id = ITEMS[friendly_name]
+      else:
+        id = friendly_name.upper().replace(" ", "_")
+    else:
+      if friendly_name in ITEMS and id == ITEMS[friendly_name]:
+        print("Remove", friendly_name)
     self.id = id
     self.npc_sell = npc_sell
 

@@ -66,7 +66,7 @@ function renderFlip(flip) {
       renderedFlip.classList.add("hidden-right");
       moneyCards[moneyCards.length - 1].classList.remove("hidden-left");
     } else {
-      window.reload();
+      window.location.reload();
     }
   };
   document.body.appendChild(renderedFlip);
