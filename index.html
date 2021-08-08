@@ -92,6 +92,10 @@
       a {
         color: #007b;
       }
+      button[disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
     </style>
   </head>
   <body>
@@ -99,9 +103,8 @@
       <h1>Welcome to Skyblock Money</h1>
       <p>Get personalized money making methods and flip your way up.
          Let's start with who you are.</p>
-      <p>Use the code for [date]</p>
       <input type="text" id="username">
-      <input type="text" id="code" placeholder="code for OP flips from discord">
+      <button class="auth">Auth with Discord</button>
       <button class="next">Next</button>
       <p><i>psst!</i> join the <a href="https://discord.gg/Pzd2GEREEz">discord</a></p>
     </div>

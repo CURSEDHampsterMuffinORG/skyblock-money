@@ -1,3 +1,7 @@
+if (document.cookie != "") {
+  document.querySelector("#card1 button.auth").setAttribute("disabled", "")
+}
+
 document.querySelector("#card5 button.back").onclick = () => {
   var moneyCards = document.querySelectorAll(".money-card.hidden-left");
   if (moneyCards.length > 0) {
@@ -10,13 +14,12 @@ document.querySelector("#card5 button.reload").onclick = () => {
   window.location.reload();
 };
 
-document.querySelector("#card1 button").onclick = () => {
+document.querySelector("#card1 button.next").onclick = () => {
   document.querySelector("#card1").classList.add("hidden-left");
   document.querySelector("#card2").classList.remove("hidden-right");
 
   var username = document.querySelector("#card1 #username").value;
-  var code = document.querySelector("#card1 #code").value;
-  fetch(`/flips-for/${username}/${code}`).then((resp) => {
+  fetch(`/flips-for/${username}`).then((resp) => {
     console.log(resp.status);
     if (resp.status == 200) {
       return resp.json();
@@ -33,6 +36,10 @@ document.querySelector("#card1 button").onclick = () => {
     }, 1000); // If we don't delay the stuff, the users don't get to see my *wonderful* loading bar!
     // besides they'll think it's a crappy calculator that's just giving them false results
   })
+}
+
+document.querySelector("#card1 button.auth").onclick = () => {
+  window.location = "[discord url here]";
 }
 
 function renderFlip(flip) {
