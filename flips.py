@@ -15,9 +15,7 @@ flips = [
     NPCBazaarFlip("Spruce Wood", "LOG:1", 5, "Lumber Merchant in Bazaar Alley"),
     NPCBazaarFlip("Birch Wood", "LOG:2", 5, "Lumber Merchant in Bazaar Alley"),
     # Mine merchant
-    NPCBazaarFlip(
-        "Cobblestone", "COBBLESTONE", 3, "Mine Merchant nearby the Coal Mine"
-    ),
+    NPCBazaarFlip("Cobblestone", "COBBLESTONE", 3, "Mine Merchant nearby the Coal Mine"),
     NPCBazaarFlip("Coal", "COAL", 4, "Mine Merchant nearby the Coal Mine"),
     # Farm merchant
     NPCBazaarFlip("Melon Slice", "MELON", 3, "Farm Merchant in the Central Hub"),
@@ -27,12 +25,8 @@ flips = [
     NPCBazaarFlip("Cocoa Beans", "INK_SACK:3", 5, "Farm Merchant in the Central Hub"),
     NPCBazaarFlip("Sugar Cane", "SUGAR_CANE", 5, "Farm Merchant in the Central Hub"),
     NPCBazaarFlip("Pumpkin", "PUMPKIN", 8, "Farm Merchant in the Central Hub"),
-    NPCBazaarFlip(
-        "Red Mushroom", "RED_MUSHROOM", 12, "Farm Merchant in the Central Hub"
-    ),
-    NPCBazaarFlip(
-        "Brown Mushroom", "BROWN_MUSHROOM", 12, "Farm Merchant in the Central Hub"
-    ),
+    NPCBazaarFlip("Red Mushroom", "RED_MUSHROOM", 12, "Farm Merchant in the Central Hub"),
+    NPCBazaarFlip("Brown Mushroom", "BROWN_MUSHROOM", 12, "Farm Merchant in the Central Hub"),
     # Alchemist
     NPCBazaarFlip("Nether Wart", "NETHER_STALK", 10, "Alchemist in the Purple House"),
     NPCBazaarFlip("Rabbit's Foot", "RABBIT_FOOT", 10, "Alchemist in the Purple House"),
@@ -48,12 +42,7 @@ flips = [
     NPCBazaarFlip("Sand", "SAND", 1, "Builder in the Builder's House"),
     NPCBazaarFlip("Ice", "ICE", 1, "Builder in the Builder's House"),
     NPCBazaarFlip("Packed Ice", "PACKED_ICE", 9, "Builder in the Builder's House"),
-    NPCBazaarFlip(
-        "Redstone",
-        "REDSTONE",
-        4,
-        "Mad Redstone Engineer in the Basement of the Builder's House",
-    ),
+    NPCBazaarFlip("Redstone", "REDSTONE", 4, "Mad Redstone Engineer in the Basement of the Builder's House",),
     # Pat
     NPCBazaarFlip("Gravel", "GRAVEL", 4.33, "Pat in the Graveyard House"),
     NPCBazaarFlip("Flint", "FLINT", 6, "Pat in the Graveyard House"),
@@ -248,5 +237,128 @@ more_flips = [
     BazaarNPCFlip("Refined Titanium", 51200.0),
     BazaarNPCFlip("Starfall", 15.0),
     BazaarNPCFlip("Treasurite", 5000.0),
+    ####################################
+    ##########     COMBAT     ##########
+    ####################################
+    # Flesh
+    BazaarNPCFlip("Rotten Flesh", 2.0),
+    BazaarNPCFlip("Enchanted Rotten Flesh", 320.0),
+    # Bone
+    BazaarNPCFlip("Bone", 2.0),
+    BazaarNPCFlip("Enchanted Bone", 320.0),
+    # String
+    BazaarNPCFlip("String", 3.0),
+    BazaarNPCFlip("Enchanted String", 576.0),
+    # Spider Eye
+    BazaarNPCFlip("Spider Eye", 3.0),
+    BazaarNPCFlip("Enchanted Spider Eye", 480.0),
+    BazaarNPCFlip("Enchanted Fermented Spider Eye", 31000.0),
+    # Gunpowder
+    BazaarNPCFlip("Gunpowder", 4.0),
+    BazaarNPCFlip("Enchanted Gunpowder", 640.0),
+    BazaarNPCFlip("Enchanted Firework Rocket", 41000.0),
+    # Ender Pearl
+    BazaarNPCFlip("Ender Pearl", 10.0),
+    BazaarNPCFlip("Enchanted Ender Pearl", 200.0),
+    BazaarNPCFlip("Enchanted Eye of Ender", 3520.0),
+    BazaarNPCFlip("Absolute Ender Pearl", 11200.0),
+    # Ghast Tear
+    BazaarNPCFlip("Ghast Tear", 16.0),
+    BazaarNPCFlip("Enchanted Ghast Tear", 80.0),
+    # Slimes
+    BazaarNPCFlip("Slimeball", 5.0),
+    BazaarNPCFlip("Enchanted Slimeball", 800.0),
+    BazaarNPCFlip("Enchanted Slime Block", 128000.0),
+    # Magma
+    BazaarNPCFlip("Magma Cream", 8.0),
+    BazaarNPCFlip("Enchanted Magma Cream", 1280.0),
+    BazaarNPCFlip("Yoggie", 100.0),
+    # Blaze
+    BazaarNPCFlip("Blaze Rod", 9.0),
+    BazaarNPCFlip("Enchanted Blaze Powder", 1440.0),
+    BazaarNPCFlip("Enchanted Blaze Rod", 230400.0),
+    # Mythological
+    BazaarNPCFlip("Griffin Feather", 1000.0),
+    BazaarNPCFlip("Ancient Claw", 200.0),
+    # Revenant Horror
+    BazaarNPCFlip("Revenant Flesh", 1.0),
+    ####################################
+    ######     Woods & Fishes     ######
+    ####################################
+    # Oak
+    BazaarNPCFlip("Oak Wood", 2.0),
+    BazaarNPCFlip("Enchanted Oak Wood", 320.0),
+    # Spruce
+    BazaarNPCFlip("Spruce Wood", 2.0),
+    BazaarNPCFlip("Enchanted Spruce Wood", 320.0),
+    # Birch
+    BazaarNPCFlip("Birch Wood", 2.0),
+    BazaarNPCFlip("Enchanted Birch Wood", 320.0),
+    # Dark Oak
+    BazaarNPCFlip("Dark Oak Wood", 2.0),
+    BazaarNPCFlip("Enchanted Dark Oak Wood", 320.0),
+    # Acacia
+    BazaarNPCFlip("Acacia Wood", 2.0),
+    BazaarNPCFlip("Enchanted Acacia Wood", 320.0),
+    # Jungle
+    BazaarNPCFlip("Jungle Wood", 2.0),
+    BazaarNPCFlip("Enchanted Jungle Wood", 320.0),
+    # Raw Fish
+    BazaarNPCFlip("Raw Fish", 6.0),
+    BazaarNPCFlip("Enchanted Raw Fish", 960.0),
+    BazaarNPCFlip("Enchanted Cooked Fish", 150000.0),
+    # Raw Salmon
+    BazaarNPCFlip("Raw Salmon", 10.0),
+    BazaarNPCFlip("Enchanted Raw Salmon", 1600.0),
+    BazaarNPCFlip("Enchanted Cooked Salmon", 256000.0),
+    # Clownfish
+    BazaarNPCFlip("Clownfish", 20.0),
+    BazaarNPCFlip("Enchanted Clownfish", 3200.0),
+    # Pufferfish
+    BazaarNPCFlip("Pufferfish", 15.0),
+    BazaarNPCFlip("Enchanted Pufferfish", 2400.0),
+    # Prismarine Shard
+    BazaarNPCFlip("Prismarine Shard", 5.0),
+    BazaarNPCFlip("Enchanted Prismarine Shard", 400.0),
+    # Prismarine Crystals
+    BazaarNPCFlip("Prismarine Crystals", 5.0),
+    BazaarNPCFlip("Enchanted Prismarine Crystals", 400.0),
+    # Clay
+    BazaarNPCFlip("Clay", 3.0),
+    BazaarNPCFlip("Enchanted Clay", 480.0),
+    # Lily Pad
+    BazaarNPCFlip("Lily Pad", 10.0),
+    BazaarNPCFlip("Enchanted Lily Pad", 1600.0),
+    # Ink
+    BazaarNPCFlip("Ink Sack", 2.0),
+    BazaarNPCFlip("Enchanted Ink Sack", 160.0),
+    # Sponge
+    BazaarNPCFlip("Sponge", 50.0),
+    BazaarNPCFlip("Enchanted Sponge", 2000.0),
+    BazaarNPCFlip("Enchanted Wet Sponge", 80000.0),
+    # Baits
+    BazaarNPCFlip("Carrot Bait", 7.0),
+    BazaarNPCFlip("Minnow Bait", 12.0),
+    BazaarNPCFlip("Fish Bait", 20.0),
+    BazaarNPCFlip("Light Bait", 16.0),
+    BazaarNPCFlip("Dark Bait", 8.0),
+    BazaarNPCFlip("Spooky Bait", 10.0),
+    BazaarNPCFlip("Spiked Bait", 20.0),
+    BazaarNPCFlip("Blessed Bait", 42.0),
+    BazaarNPCFlip("Ice Bait", 3.0),
+    BazaarNPCFlip("Whale Bait", 80.0),
+    ####################################
+    #########     Oddities     #########
+    ####################################
+    # Potatos, compactors, fuels
+    BazaarNPCFlip("Hot Potato Book", 13000.0),
+    BazaarNPCFlip("Compactor", 640.0),
+    BazaarNPCFlip("Super Compactor 3000", 50000.0),
+    BazaarNPCFlip("Enchanted Lava Bucket", 50000.0),
+    # EXP bottles
+    BazaarNPCFlip("Experience Bottle", 5.0),
+    BazaarNPCFlip("Grand Experience Bottle", 480.0),
+    BazaarNPCFlip("Titanic Experience Bottle", 5000.0),
+    BazaarNPCFlip("Colossal Experience Bottle", 5000.0, id="COLOSSAL_EXP_BOTTLE"),
 ]
 flips += more_flips
