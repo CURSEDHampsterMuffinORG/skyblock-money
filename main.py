@@ -35,7 +35,7 @@ def get_flips(username):
   userid = ""
   if "token" in request.cookies:
     userid = discord.check_code(request.cookies["token"])
-  verified_discord = userid in ["794377681331945524"]
+  verified_discord = userid in ["794377681331945524", "811220121620054016"]
   if not verified_discord:
     print(username, "is not approved")
     calculated_flips.append(

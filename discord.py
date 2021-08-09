@@ -40,11 +40,14 @@ def handle_callback():
   if request.values.get("error"):
     return request.values["error"]
   discord = make_session(state=session.get("oauth2_state"))
-  token = discord.fetch_token(
-    "https://discordapp.com/api/oauth2/token",
-    client_secret=OAUTH2_CLIENT_SECRET,
-    authorization_response=request.url,
-  )
+  try:
+      token = discord.fetch_token(
+        "https://discordapp.com/api/oauth2/token",
+        client_secret=OAUTH2_CLIENT_SECRET,
+        authorization_response=request.url,
+      )
+  except Exception as e:
+      return "<p style='font-family: sans-serif'>Error authing. Try clearing your cookies.</p>"
   resp = make_response(
     "<p style='font-family: sans-serif'>Token has been saved. <a href='/'>Get flips</a></p>"
   )
