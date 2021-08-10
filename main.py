@@ -93,4 +93,14 @@ def send_icon():
   return open("favicon.png", "rb").read()
 
 
+@app.route("/bazaar.png")
+def send_bazaar_icon():
+  return open("bazaar.png", "rb").read()
+
+
+@app.route("/adventurer.png")
+def send_adventurer_icon():
+  return open("adventurer.png", "rb").read()
+
+
 app.run(host="0.0.0.0")

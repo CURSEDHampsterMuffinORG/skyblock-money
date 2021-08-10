@@ -4,6 +4,9 @@ API_KEY = os.environ["API_KEY"]
 ITEMS = json.load(open("skyblock_items.json"))
 ITEMS = {friendly["name"]: id for id, friendly in ITEMS.items()}
 
+NPC = "NPC <img src='/adventurer.png' class='npcIcon'></img>"
+BAZAAR = "Bazaar <img src='/bazaar.png' class='npcIcon'></img>"
+
 
 class User:
   def __init__(self, username):
@@ -52,12 +55,12 @@ class NPCBazaarFlip:
         "item": self.friendly_name,
         "profit": "{:,}".format(money - cost),
         "buying": {
-          "source": "NPC",
+          "source": NPC,
           "cost": "{:,}".format(cost),
           "details": f"{amount_available}x {self.friendly_name} from {self.npc_name}",
         },
         "selling": {
-          "source": "Bazaar",
+          "source": BAZAAR,
           "cost": "{:,}".format(money),
           "details": f"{amount_available}x {self.friendly_name}",
         },
@@ -105,13 +108,13 @@ class BazaarNPCFlip:
         "item": self.friendly_name,
         "profit": "{:,}".format(money - cost),
         "buying": {
-          "source": "Bazaar",
+          "source": BAZAAR,
           "cost": "{:,}".format(cost),
           "details": f"{amount_available}x {self.friendly_name}"
           + f" for {round(bazaar_cost, 1)} each",
         },
         "selling": {
-          "source": "NPC",
+          "source": NPC,
           "cost": "{:,}".format(money),
           "details": f"{amount_available}x {self.friendly_name}"
           + f" for {round(self.npc_sell, 1)} each",
@@ -154,12 +157,12 @@ class NPCCraftBazaarFlip:
         "item": self.crafted_friendly_name,
         "profit": "{:,}".format(money - cost),
         "buying": {
-          "source": "NPC",
+          "source": NPC,
           "cost": "{:,}".format(cost),
           "details": f"{amount_available * self.craft_cost}x {self.friendly_name} from {self.npc_name}",
         },
         "selling": {
-          "source": "Bazaar",
+          "source": BAZAAR,
           "cost": "{:,}".format(money),
           "details": f"{amount_available}x {self.crafted_friendly_name}",
         },
