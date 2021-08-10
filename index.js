@@ -19,7 +19,7 @@ document.querySelector("#card1 button.next").onclick = () => {
   document.querySelector("#card2").classList.remove("hidden-right");
 
   var username = document.querySelector("#card1 #username").value;
-  fetch(`/flips-for/${username}`).then((resp) => {
+  fetch(`{window.location.href}flips-for/${username}`).then((resp) => {
     console.log(resp.status);
     if (resp.status == 200) {
       return resp.json();
