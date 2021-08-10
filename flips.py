@@ -1,4 +1,4 @@
-from api import NPCBazaarFlip, BazaarNPCFlip
+from api import NPCBazaarFlip, BazaarNPCFlip, NPCCraftBazaarFlip
 
 flips = [
     # Adventurer
@@ -7,8 +7,8 @@ flips = [
     NPCBazaarFlip("Gunpowder", "SULPHUR", 10, "Adventurer in Bazaar Alley"),
     NPCBazaarFlip("String", "STRING", 10, "Adventurer in Bazaar Alley"),
     NPCBazaarFlip("Slimeball", "SLIME_BALL", 14, "Adventurer in Bazaar Alley"),
-    NPCBazaarFlip("Oak Wood", "LOG", 5, "Lumber Merchant in Bazaar Alley"),
     # Lumber merchant
+    NPCBazaarFlip("Oak Wood", "LOG", 5, "Lumber Merchant in Bazaar Alley"),
     NPCBazaarFlip("Dark Oak Wood", "LOG_2:1", 5, "Lumber Merchant in Bazaar Alley"),
     NPCBazaarFlip("Jungle Wood", "LOG:3", 5, "Lumber Merchant in Bazaar Alley"),
     NPCBazaarFlip("Acacia Wood", "LOG_2", 5, "Lumber Merchant in Bazaar Alley"),
@@ -360,5 +360,58 @@ more_flips = [
     BazaarNPCFlip("Grand Experience Bottle", 480.0),
     BazaarNPCFlip("Titanic Experience Bottle", 5000.0),
     BazaarNPCFlip("Colossal Experience Bottle", 5000.0, id="COLOSSAL_EXP_BOTTLE"),
+    # ===================================================================================
+    # |                              NPC > Craft to Bazaar                              |
+    # ===================================================================================
+    # Adventurer
+    NPCCraftBazaarFlip("Rotten Flesh", "Enchanted Rotten Flesh", "ROTTEN_FLESH_4", 160, "ENCHANTED_ROTTEN_FLESH", 8, "Adventurer in Bazaar Alley"),
+    NPCCraftBazaarFlip("Bone", "Enchanted Bone", "BONE_5", 160, "ENCHANTED_BONE", 8, "Adventurer in Bazaar Alley"),
+    NPCCraftBazaarFlip("Gunpowder", "Enchanted Gunpowder", "SULPHUR_4", 160, "ENCHANTED_GUNPOWDER", 10, "Adventurer in Bazaar Alley"),
+    NPCCraftBazaarFlip("String", "Enchanted String", "STRING_4", 192, "ENCHANTED_STRING", 10, "Adventurer in Bazaar Alley"),
+    NPCCraftBazaarFlip("Slimeball", "Enchanted Slimeball", "SLIME_BALL_5", 160, "ENCHANTED_SLIME_BALL", 14, "Adventurer in Bazaar Alley"),
+    # Lumber merchant
+    NPCCraftBazaarFlip("Oak Wood", "Enchanted Oak Wood", "LOG_6", 160, "ENCHANTED_OAK_LOG", 5, "Lumber Merchant in Bazaar Alley"),
+    NPCCraftBazaarFlip("Dark Oak Wood", "Enchanted Dark Oak Wood", "LOG_2:1_5", 160, "ENCHANTED_DARK_OAK_LOG", 5, "Lumber Merchant in Bazaar Alley"),
+    NPCCraftBazaarFlip("Jungle Wood", "Enchanted Jungle Wood", "LOG:3_6", 160, "ENCHANTED_JUNGLE_LOG", 5, "Lumber Merchant in Bazaar Alley"),
+    NPCCraftBazaarFlip("Acacia Wood", "Enchanted Acacia Wood", "LOG_2_6", 160, "ENCHANTED_ACACIA_LOG", 5, "Lumber Merchant in Bazaar Alley"),
+    NPCCraftBazaarFlip("Spruce Wood", "Enchanted Spruce Wood", "LOG:1_5", 160, "ENCHANTED_SPRUCE_LOG", 5, "Lumber Merchant in Bazaar Alley"),
+    NPCCraftBazaarFlip("Birch Wood", "Enchanted Birch Wood", "LOG:2_7", 160, "ENCHANTED_BIRCH_LOG", 5, "Lumber Merchant in Bazaar Alley"),
+    # Mine merchant
+    NPCCraftBazaarFlip("Cobblestone", "Enchanted Cobblestone", "COBBLESTONE_4", 160, "ENCHANTED_COBBLESTONE", 3, "Mine Merchant nearby the Coal Mine"),
+    NPCCraftBazaarFlip("Coal", "Enchanted Coal", "COAL_4", 160, "ENCHANTED_COAL", 4, "Mine Merchant nearby the Coal Mine"),
+    # Farm merchant
+    NPCCraftBazaarFlip("Melon Slice", "Enchanted Melon", "MELON_4", 160, "ENCHANTED_MELON", 3, "Farm Merchant in the Central Hub"),
+    NPCCraftBazaarFlip("Wheat", "Hay Bale", "WHEAT_-1", 9, "HAY_BLOCK", 2.33, "Farm Merchant in the Central Hub"),
+    NPCCraftBazaarFlip("Potato", "Enchanted Potato", "POTATO_ITEM_4", 160, "ENCHANTED_POTATO", 2.33, "Farm Merchant in the Central Hub"),
+    NPCCraftBazaarFlip("Carrot", "Enchanted Carrot", "CARROT_ITEM_4", 160, "ENCHANTED_CARROT", 2.33, "Farm Merchant in the Central Hub"),
+    NPCCraftBazaarFlip("Cocoa Beans", "Enchanted Cocoa Bean", "INK_SACK:3_4", 160, "ENCHANTED_COCOA_BEAN", 5, "Farm Merchant in the Central Hub"),
+    NPCCraftBazaarFlip("Sugar Cane", "Enchanted Sugar", "SUGAR_CANE_4", 160, "ENCHANTED_SUGAR", 5, "Farm Merchant in the Central Hub"),
+    NPCCraftBazaarFlip("Pumpkin", "Enchanted Pumpkin", "PUMPKIN_3", 160, "ENCHANTED_PUMPKIN", 8, "Farm Merchant in the Central Hub"),
+    NPCCraftBazaarFlip("Red Mushroom", "Enchanted Red Mushroom", "MUSHROOM_COLLECTION_6", 160, "ENCHANTED_RED_MUSHROOM", 12, "Farm Merchant in the Central Hub"),
+    NPCCraftBazaarFlip("Brown Mushroom", "Enchanted Brown Mushroom", "MUSHROOM_COLLECTION_6", 160, "ENCHANTED_BROWN_MUSHROOM", 12, "Farm Merchant in the Central Hub"),
+    # Alchemist
+    NPCCraftBazaarFlip("Nether Wart", "Enchanted Nether Wart", "NETHER_STALK_4", 160, "ENCHANTED_NETHER_STALK", 10, "Alchemist in the Purple House"),
+    NPCCraftBazaarFlip("Rabbit's Foot", "Enchanted Rabbit Foot", "RABBIT_4", 160, "ENCHANTED_RABBIT_FOOT", 10, "Alchemist in the Purple House"),
+    NPCCraftBazaarFlip("Spider Eye", "Enchanted Spider Eye", "SPIDER_EYE_4", 160, "ENCHANTED_SPIDER_EYE", 12, "Alchemist in the Purple House"),
+    NPCCraftBazaarFlip("Magma Cream", "Enchanted Magma Cream", "MAGMA_CREAM_5", 160, "ENCHANTED_MAGMA_CREAM", 20, "Alchemist in the Purple House"),
+    NPCCraftBazaarFlip("Ghast Tear", "Enchanted Ghast Tear", "GHAST_TEAR_4", 5, "ENCHANTED_GHAST_TEAR", 200, "Alchemist in the Purple House"),
+    # Fish
+    NPCCraftBazaarFlip("Raw Fish", "Enchanted Raw Fish", "RAW_FISH_6", 160, "ENCHANTED_RAW_FISH", 20, "Fish Merchant nearby the Pond"),
+    NPCCraftBazaarFlip("Pufferfish", "Enchanted Pufferfish", "RAW_FISH:3_2", 160, "ENCHANTED_PUFFERFISH", 40, "Fish Merchant nearby the Pond"),
+    NPCCraftBazaarFlip("Raw Salmon", "Enchanted Raw Salmon", "RAW_FISH:1_4", 160, "ENCHANTED_SALMON", 30, "Fish Merchant nearby the Pond"),
+    NPCCraftBazaarFlip("Clownfish", "Enchanted Clownfish", "RAW_FISH:2_-1", 160, "ENCHANTED_CLOWNFISH", 100, "Fish Merchant nearby the Pond"),
+    # Builder
+    NPCCraftBazaarFlip("Sand", "Enchanted Sand", "SAND_5", 160, "ENCHANTED_SAND", 1, "Builder in the Builder's House"),
+    NPCCraftBazaarFlip("Ice", "Enchanted Ice", "ICE_4", 160, "ENCHANTED_ICE", 1, "Builder in the Builder's House"),
+    NPCCraftBazaarFlip("Ice", "Packed Ice", "ICE_-1", 9, "PACKED_ICE", 1, "Builder in the Builder's House"),
+    NPCCraftBazaarFlip("Packed Ice", "Enchanted Packed Ice", "ICE_7", 160, "ENCHANTED_PACKED_ICE", 9, "Builder in the Builder's House"),
+    NPCCraftBazaarFlip("Redstone", "Enchanted Redstone", "REDSTONE_4", 160, "ENCHANTED_REDSTONE", 4, "Builder in the Builder's House"),
+    # Pat and Gold Mine
+    NPCCraftBazaarFlip("Flint", "Enchanted Flint", "GRAVEL_5", 160, "ENCHANTED_FLINT", 6, "Pat in the Graveyard House"),
+    NPCCraftBazaarFlip("Iron Ingot", "Enchanted Iron", "IRON_INGOT_4", 160, "ENCHANTED_IRON", 5, "Iron Forger outside the Gold Mine"),
+    NPCCraftBazaarFlip("Gold Ingot", "Enchanted Gold", "GOLD_INGOT_4", 160, "ENCHANTED_GOLD", 5.5, "Gold Forger outside the Gold Mine"),
+    # The End
+    NPCCraftBazaarFlip("End Stone", "Enchanted End Stone", "ENDER_STONE_4", 160, "ENCHANTED_ENDSTONE", 10, "Pearl Dealer on the End Island"),
+    NPCCraftBazaarFlip("Obsidian", "Enchanted Obsidian", "OBSIDIAN_4", 160, "ENCHANTED_OBSIDIAN", 50, "Pearl Dealer on the End Island"),
 ]
 flips += more_flips

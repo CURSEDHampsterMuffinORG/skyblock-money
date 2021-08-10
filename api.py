@@ -1,4 +1,4 @@
-import os, requests, math, json
+import os, requests, json
 
 API_KEY = os.environ["API_KEY"]
 ITEMS = json.load(open("skyblock_items.json"))
@@ -20,9 +20,10 @@ class User:
       profiles.json()["profiles"],
       key=lambda prof: prof["members"][uuid]["last_save"],
     )
+    self.user_data = self.profiles["members"][self.uuid]
     self.bank = (
       self.profiles["banking"]["balance"]
-      + self.profiles["members"][self.uuid]["coin_purse"]
+      + self.user_data["coin_purse"]
     )
     self.bazaar = requests.get(
       "https://api.hypixel.net/skyblock/bazaar",
@@ -44,7 +45,7 @@ class NPCBazaarFlip:
     bank = user.bank
     bazaar = user.bazaar
     if bank >= self.npc_cost:
-      amount_available = min(math.floor(bank / self.npc_cost), 640)
+      amount_available = min(int(bank / self.npc_cost), 640)
       cost = round(self.npc_cost * amount_available)
       money = round(bazaar[self.id]["quick_status"]["sellPrice"] * amount_available)
       return {
@@ -97,7 +98,7 @@ class BazaarNPCFlip:
       / totalVolume
     )
     if bank >= bazaar_cost:
-      amount_available = min(math.floor(bank / bazaar_cost), 2240)
+      amount_available = min(int(bank / bazaar_cost), 2240)
       cost = round(bazaar_cost * amount_available)
       money = round(self.npc_sell * amount_available)
       return {
@@ -130,3 +131,40 @@ class BazaarNPCFlip:
 #        )[0]["pricePerUnit"],
 #      )
 #      print(wantedVolume / totalVolume, availableVolume / totalVolume)
+
+class NPCCraftBazaarFlip:
+  def __init__(self, friendly_name, crafted_friendly_name, craft_req, craft_cost, id, npc_cost, npc_name):
+    self.friendly_name = friendly_name
+    self.crafted_friendly_name = crafted_friendly_name
+    self.craft_req = craft_req
+    self.id = id
+    self.npc_cost = npc_cost
+    self.craft_cost = craft_cost
+    self.npc_name = npc_name
+
+  def checkFlip(self, user):
+    bank = user.bank
+    bazaar = user.bazaar
+    collections = user.user_data["unlocked_coll_tiers"]
+    if bank >= self.npc_cost and self.craft_req in collections:
+      amount_available = min(int(bank / self.npc_cost / self.craft_cost), int(640 / self.craft_cost))
+      cost = round(self.npc_cost * amount_available * self.craft_cost)
+      money = round(bazaar[self.id]["quick_status"]["sellPrice"] * amount_available)
+      return {
+        "item": self.crafted_friendly_name,
+        "profit": "{:,}".format(money - cost),
+        "buying": {
+          "source": "NPC",
+          "cost": "{:,}".format(cost),
+          "details": f"{amount_available * self.craft_cost}x {self.friendly_name} from {self.npc_name}",
+        },
+        "selling": {
+          "source": "Bazaar",
+          "cost": "{:,}".format(money),
+          "details": f"{amount_available}x {self.crafted_friendly_name}",
+        },
+      }
+    elif bank >= self.npc_cost:
+      print("Cannot craft", self.crafted_friendly_name)
+    else:
+      print(self.friendly_name, "is unaffordable")
