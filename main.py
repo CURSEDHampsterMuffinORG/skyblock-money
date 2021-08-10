@@ -26,7 +26,7 @@ def send_index_code():
 app.add_url_rule("/callback", "callback", discord.handle_callback)
 
 
-@app.route("/flips-for/<username>/")
+@app.route("/flips-for/<username>")
 def get_flips(username):
   # Init
   user = api.User(username)
@@ -71,13 +71,16 @@ def get_flips(username):
       # f"({flip_data['buying']['cost']} to {flip_data['selling']['cost']})",
       # )
       ...
-  return json.dumps(
+    elif flip_data is not None:
+      print("Skipping over flip because user is not verified")
+  data = json.dumps(
     sorted(
       calculated_flips,
       key=lambda flip_data: int(flip_data["profit"].replace(",", "")),
       reverse=True,
     )
   )
+  return Response(data, mimetype="application/json")
 
 
 @app.route("/index.png")
