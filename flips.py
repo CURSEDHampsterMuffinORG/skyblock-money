@@ -405,7 +405,9 @@ more_flips = [
     NPCCraftBazaarFlip("Ice", "Enchanted Ice", "ICE_4", 160, "ENCHANTED_ICE", 1, "Builder in the Builder's House"),
     NPCCraftBazaarFlip("Ice", "Packed Ice", "ICE_-1", 9, "PACKED_ICE", 1, "Builder in the Builder's House"),
     NPCCraftBazaarFlip("Packed Ice", "Enchanted Packed Ice", "ICE_7", 160, "ENCHANTED_PACKED_ICE", 9, "Builder in the Builder's House"),
-    NPCCraftBazaarFlip("Redstone", "Enchanted Redstone", "REDSTONE_4", 160, "ENCHANTED_REDSTONE", 4, "Builder in the Builder's House"),
+    NPCCraftBazaarFlip("Quartz Block", "Enchanted Quartz Block", "QUARTZ_4", 40, "ENCHANTED_QUARTZ", 50, "Builder in the Builder's House"),
+    NPCCraftBazaarFlip("Quartz Block", "Enchanted Quartz Block", "QUARTZ_4", 40, "ENCHANTED_QUARTZ", 32, "Old Builder in the Builder's House"),
+    NPCCraftBazaarFlip("Redstone", "Enchanted Redstone", "REDSTONE_4", 160, "ENCHANTED_REDSTONE", 4, "Mad Redstone Engineer in the Builder's House"),
     # Pat and Gold Mine
     NPCCraftBazaarFlip("Flint", "Enchanted Flint", "GRAVEL_5", 160, "ENCHANTED_FLINT", 6, "Pat in the Graveyard House"),
     NPCCraftBazaarFlip("Iron Ingot", "Enchanted Iron", "IRON_INGOT_4", 160, "ENCHANTED_IRON", 5, "Iron Forger outside the Gold Mine"),
