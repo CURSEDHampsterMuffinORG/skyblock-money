@@ -32,9 +32,7 @@ def make_session(token=None, state=None, scope=None):
 
 def make_auth_url():
   discord = make_session(scope=["identify"])
-  auth_url, state = discord.authorization_url(
-    "https://discordapp.com/api/oauth2/authorize"
-  )
+  auth_url, state = discord.authorization_url("https://discordapp.com/api/oauth2/authorize")
   session["oauth2_state"] = state
   return auth_url
 
@@ -44,17 +42,15 @@ def handle_callback():
     return request.values["error"]
   discord = make_session(state=session.get("oauth2_state"))
   try:
-      token = discord.fetch_token(
-        "https://discordapp.com/api/oauth2/token",
-        client_secret=OAUTH2_CLIENT_SECRET,
-        authorization_response=request.url.replace("http:", "https:"),
-      )
+    token = discord.fetch_token(
+      "https://discordapp.com/api/oauth2/token",
+      client_secret=OAUTH2_CLIENT_SECRET,
+      authorization_response=request.url.replace("http:", "https:"),
+    )
   except Exception as e:
     print(e)
     return "<p style='font-family: sans-serif'>Error authing. Try clearing your cookies.</p>"
-  resp = make_response(
-    "<p style='font-family: sans-serif'>Token has been saved. <a href='/'>Get flips</a></p>"
-  )
+  resp = make_response("<p style='font-family: sans-serif'>Token has been saved. <a href='/'>Get flips</a></p>")
   resp.set_cookie("token", json.dumps(token))
   return resp
 

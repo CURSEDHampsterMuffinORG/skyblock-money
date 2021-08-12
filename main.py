@@ -58,11 +58,7 @@ def get_flips(username):
   for flip in flips.flips:
     flip_data = flip.checkFlip(user)
     profit_amount = int(flip_data["profit"].replace(",", "")) if flip_data else None
-    if (
-      flip_data is not None
-      and profit_amount > 0
-      and (profit_amount < 100000 or verified_discord)
-    ):
+    if flip_data is not None and profit_amount > 0 and (profit_amount < 100000 or verified_discord):
       calculated_flips.append(flip_data)
     elif flip_data is not None and (profit_amount < 100000 or verified_discord):
       # print(
