@@ -516,7 +516,7 @@ more_flips = [
     "Enchanted Cocoa Bean",
     "INK_SACK:3_4",
     160,
-    "ENCHANTED_COCOA_BEAN",
+    "ENCHANTED_COCOA",
     5,
     "Farm Merchant in the Central Hub",
   ),
@@ -829,5 +829,8 @@ more_flips = [
   BazaarCraftBazaarFlip("Brown Mushroom", 9, "MUSHROOM_COLLECTION_5", "Brown Mushroom Block"),
   BazaarCraftBazaarFlip("Brown Mushroom", 5184, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"),
   BazaarCraftBazaarFlip("Brown Mushroom Block", 576, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"),
+  # Cocoa
+  BazaarCraftBazaarFlip("Cocoa Beans", 160, "INK_SACK:3_4", "Enchanted Cocoa Bean"),
+  BazaarCraftBazaarFlip("Enchanted Cocoa Bean", 128, "INK_SACK:3_6", "Enchanted Cookie", source_name_2="Wheat", craft_cost_2=32),
 ]
 flips += more_flips
