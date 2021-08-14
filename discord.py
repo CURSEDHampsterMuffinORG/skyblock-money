@@ -2,6 +2,7 @@ from flask import session, request, make_response
 import os, json
 from requests_oauthlib import OAuth2Session
 
+# Get constants
 OAUTH2_CLIENT_ID = os.environ["CLIENT_ID"]
 OAUTH2_CLIENT_SECRET = os.environ["CLIENT_SECRET"]
 if "REPL_ID" in os.environ:
@@ -14,11 +15,12 @@ def token_updater(token):
   session["oauth2_token"] = token
 
 
-def make_session(token=None, state=None, scope=None):
+def make_session(token=None, scope=None):
+  """Get the OAuth2Session object for the auth URL and checking the state."""
   return OAuth2Session(
     client_id=OAUTH2_CLIENT_ID,
     token=token,
-    state=state,
+    state=None,
     scope=scope,
     redirect_uri=OAUTH2_REDIRECT_URI,
     auto_refresh_kwargs={
@@ -38,6 +40,7 @@ def make_auth_url():
 
 
 def handle_callback():
+  """Check the token and save it as a cookie if correct."""
   if request.values.get("error"):
     return request.values["error"]
   discord = make_session(state=session.get("oauth2_state"))

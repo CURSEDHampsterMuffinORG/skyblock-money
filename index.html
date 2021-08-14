@@ -104,6 +104,33 @@
         image-rendering: pixelated;
         image-rendering: crisp-edges;
       }
+      @media (prefers-color-scheme: dark) {
+        html {
+          background-color: rgb(51, 51, 69);
+          background-image: url(/index-dark.png);
+          color: white;
+        }
+        input[type="text"], button, .moneyInfo {
+          background: #fff4;
+        }
+        a {
+          color: #99fb;
+        }
+        .largeLoader {
+          background-color: #fff5;
+        }
+        .smallLoader {
+          background-color: #0005;
+        }
+        .profit {
+          color: #9f98;
+        }
+      }
+      .auction-id {
+        user-select: all;
+        color: #bf5;
+        cursor: copy;
+      }
     </style>
   </head>
   <body>

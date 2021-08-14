@@ -49,6 +49,7 @@ def get_flips(username):
     "373539975687307266", # Drew
     "650756055390879757", # Mankifg
     "726685339082817608", # The1And0nlyKevin
+    "715566599872053280", # IdiotDev
   ]
   if not verified_discord:
     print(username, "is not approved")
@@ -69,6 +70,7 @@ def get_flips(username):
         },
       }
     )
+  flips.flips += api.construct_bin_flips(user)
   for flip in flips.flips:
     flip_data = flip.checkFlip(user)
     profit_amount = int(flip_data["profit"].replace(",", "")) if flip_data else None
@@ -98,6 +100,11 @@ def send_index_bg():
   return open("index.png", "rb").read()
 
 
+@app.route("/index-dark.png")
+def send_index_bg_dark():
+  return open("index-dark.png", "rb").read()
+
+
 @app.route("/favicon.png")
 def send_icon():
   return open("favicon.png", "rb").read()
@@ -111,6 +118,11 @@ def send_bazaar_icon():
 @app.route("/adventurer.png")
 def send_adventurer_icon():
   return open("adventurer.png", "rb").read()
+
+
+@app.route("/auction.png")
+def send_auction_icon():
+  return open("auction.png", "rb").read()
 
 
 app.run(host="0.0.0.0")

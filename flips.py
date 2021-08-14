@@ -832,5 +832,24 @@ more_flips = [
   # Cocoa
   BazaarCraftBazaarFlip("Cocoa Beans", 160, "INK_SACK:3_4", "Enchanted Cocoa Bean"),
   BazaarCraftBazaarFlip("Enchanted Cocoa Bean", 128, "INK_SACK:3_6", "Enchanted Cookie", source_name_2="Wheat", craft_cost_2=32),
+  # Cacti
+  BazaarCraftBazaarFlip("Cactus", 160, "CACTUS_4", "Enchanted Cactus Green", source_name_2="Coal", craft_cost_2=20),
+  BazaarCraftBazaarFlip("Cactus", 25600, "CACTUS_8", "Enchanted Cactus", source_name_2="Coal", craft_cost_2=3200),
+  BazaarCraftBazaarFlip("Enchanted Cactus Green", 160, "CACTUS_8", "Enchanted Cactus"),
+  # Sugar Cane
+  BazaarCraftBazaarFlip("Sugar Cane", 160, "SUGAR_CANE_4", "Enchanted Sugar"),
+  BazaarCraftBazaarFlip("Sugar Cane", 192, "SUGAR_CANE_5", "Enchanted Paper"),
+  BazaarCraftBazaarFlip("Sugar Cane", 25600, "SUGAR_CANE_8", "Enchanted Sugar Cane"),
+  BazaarCraftBazaarFlip("Enchanted Sugar", 160, "SUGAR_CANE_8", "Enchanted Sugar Cane"),
+  # Cow
+  BazaarCraftBazaarFlip("Leather", 576, "LEATHER_6", "Enchanted Leather"),
+  BazaarCraftBazaarFlip("Raw Beef", 160, "LEATHER_4", "Enchanted Raw Beef"),
+  # Pork
+  BazaarCraftBazaarFlip("Raw Porkchop", 160, "PORK_4", "Enchanted Pork"),
+  BazaarCraftBazaarFlip("Raw Porkchop", 25600, "PORK_7", "Enchanted Grilled Pork"),
+  BazaarCraftBazaarFlip("Enchanted Pork", 160, "PORK_7", "Enchanted Grilled Pork"),
+  # Chicken
+  #BazaarCraftBazaarFlip("Raw Chicken", 160, "RAW_CHICKEN_4", "Enchanted Raw Chicken"),
+  #BazaarCraftBazaarFlip("Raw Chicken", 160, "RAW_CHICKEN_4", "Enchanted Raw Chicken"),
 ]
 flips += more_flips
