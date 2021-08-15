@@ -19,7 +19,8 @@ document.querySelector("#card1 button.next").onclick = () => {
   document.querySelector("#card2").classList.remove("hidden-right");
 
   var username = document.querySelector("#card1 #username").value;
-  fetch(`${window.location.href}flips-for/${username}`).then((resp) => {
+  var auctionsEnabled = document.querySelector("#card1 #auctions").checked;
+  fetch(`${window.location.href}flips-for/${username}/${auctionsEnabled}`).then((resp) => {
     console.log(resp.status);
     if (resp.status == 200) {
       return resp.json();

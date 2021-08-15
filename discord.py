@@ -15,12 +15,12 @@ def token_updater(token):
   session["oauth2_token"] = token
 
 
-def make_session(token=None, scope=None):
+def make_session(token=None, state=None, scope=None):
   """Get the OAuth2Session object for the auth URL and checking the state."""
   return OAuth2Session(
     client_id=OAUTH2_CLIENT_ID,
     token=token,
-    state=None,
+    state=state,
     scope=scope,
     redirect_uri=OAUTH2_REDIRECT_URI,
     auto_refresh_kwargs={

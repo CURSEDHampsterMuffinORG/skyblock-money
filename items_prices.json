@@ -349,12 +349,6 @@
     },
     {
         "ac": true,
-        "hi": 50000000,
-        "low": 2000000,
-        "name": "midas_sword"
-    },
-    {
-        "ac": true,
         "hi": 50000,
         "low": 40000,
         "name": "critical_v"
@@ -11186,7 +11180,7 @@
     {
         "ac": true,
         "hi": 110000,
-        "low": 100000,
+        "low": 10000,
         "name": "parkour_times"
     },
     {
@@ -11720,7 +11714,7 @@
     {
         "ac": true,
         "hi": 1000000,
-        "low": 900000,
+        "low": 150000,
         "name": "spider_egg_mixin"
     },
     {
@@ -11798,7 +11792,7 @@
     {
         "ac": true,
         "hi": 300000,
-        "low": 100000,
+        "low": 50000,
         "name": "rock_paper_shears"
     },
     {
@@ -14294,7 +14288,7 @@
     {
         "ac": true,
         "hi": 200000,
-        "low": 200000,
+        "low": 50000,
         "name": "social_display"
     },
     {
@@ -14306,7 +14300,7 @@
     {
         "ac": true,
         "hi": 500000,
-        "low": 500000,
+        "low": 12500,
         "name": "tic_tac_toe"
     },
     {

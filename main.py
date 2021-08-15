@@ -26,10 +26,10 @@ def send_index_code():
 app.add_url_rule("/callback", "callback", discord.handle_callback)
 
 
-@app.route("/flips-for/<username>")
-def get_flips(username):
+@app.route("/flips-for/<username>/<auctions>")
+def get_flips(username, auctions):
   # Init
-  user = api.User(username)
+  user = api.User(username, auctions)
   calculated_flips = []
   # Check code
   userid = ""
@@ -70,8 +70,10 @@ def get_flips(username):
         },
       }
     )
-  flips.flips += api.construct_bin_flips(user)
-  for flip in flips.flips:
+  available_flips = flips.flips.copy()
+  if auctions == "true":
+    available_flips += api.construct_bin_flips(user)
+  for flip in available_flips:
     flip_data = flip.checkFlip(user)
     profit_amount = int(flip_data["profit"].replace(",", "")) if flip_data else None
     if flip_data is not None and profit_amount > 0 and (profit_amount < 100000 or verified_discord):

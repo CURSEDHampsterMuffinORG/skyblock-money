@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <meta property="og:title" content="Skyblock Money">
-    <meta property="og:description" content="A calculator for all kinds of money flips on Hypixel Skyblock.">
+    <meta property="og:description" content="A calculator for all kinds of money flips on Hypixel Skyblock. Made by @KTibow, the maker of Bazaar Money.">
     <meta property="og:image" content="https://skyblock-money.ktibow.repl.co/favicon.png">
     <title>Skyblock Money</title>
     <style>
@@ -138,6 +138,8 @@
       <h1>Welcome to Skyblock Money</h1>
       <p>Get personalized money making methods and flip your way up.
          Let's start with who you are.</p>
+      <label>Calculate auction flips <input type="checkbox" id="auctions" checked></label>
+      <br>
       <input type="text" id="username">
       <button class="auth">Auth with Discord</button>
       <button class="next">Next</button>
@@ -146,6 +148,12 @@
     <div class="card hidden-right" id="card2">
       <h1>Getting your data from the Hypixel API...</h1>
       <div class="loader largeLoader"><div class="loader smallLoader"></div></div>
+      <p>The tool needs to collect a lot of data in order to calculate the best personalized flips.</p>
+      <ul>
+        <li>User data (to see the amount of money you have and collections)</li>
+        <li>Bazaar data (to get current prices to find which flips are good)</li>
+        <li>Many pages of Auction House data (to see what's going for less than it could)</li>
+      </ul>
     </div>
     <div class="card hidden-right" id="card4">
       <h1>The server had an error.</h1>

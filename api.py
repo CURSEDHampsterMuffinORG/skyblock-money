@@ -1,4 +1,4 @@
-import os, requests, json
+import os, requests, json, time
 
 API_KEY = os.environ["API_KEY"]
 ITEMS = json.load(open("skyblock_items.json"))
@@ -12,7 +12,7 @@ BIN = "BIN <img src='/auction.png' class='npcIcon'></img>"
 
 
 class User:
-  def __init__(self, username):
+  def __init__(self, username, auctions):
     uuid = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{username}").json()["id"]
     profiles = requests.get(
       "https://api.hypixel.net/skyblock/profiles",
@@ -30,13 +30,20 @@ class User:
       "https://api.hypixel.net/skyblock/bazaar",
       headers={"Api-Key": API_KEY},
     ).json()["products"]
-    self.ah = requests.get(
-      "https://api.hypixel.net/skyblock/auctions",
-      headers={"Api-Key": API_KEY},
-    ).json()["auctions"]
-
-  def get_flips(self):
-    ...
+    if auctions == "true":
+      self.ah = []
+      initial_data = requests.get(
+        "https://api.hypixel.net/skyblock/auctions",
+        headers={"Api-Key": API_KEY},
+      ).json()
+      self.ah += initial_data["auctions"]
+      for i in range(1, min(initial_data["totalPages"], 10)):
+        time.sleep(1)
+        self.ah += requests.get(
+          "https://api.hypixel.net/skyblock/auctions",
+          headers={"Api-Key": API_KEY},
+          params={"page": i}
+        ).json()["auctions"]
 
 
 class NPCBazaarFlip:
@@ -91,9 +98,12 @@ class BazaarNPCFlip:
     availableVolume = bazaar[self.id]["quick_status"]["buyVolume"]
     wantedVolume = bazaar[self.id]["quick_status"]["sellVolume"]
     totalVolume = availableVolume + wantedVolume
+    if not bazaar[self.id]["sell_summary"]:
+      print("Nobody is selling", self.friendly_name)
+      return
     bazaar_cost = (
       bazaar[self.id]["quick_status"]["buyPrice"] * wantedVolume / totalVolume
-      + (bazaar[self.id]["sell_summary"] or [bazaar[self.id]["quick_status"]["buyPrice"],])[
+      + bazaar[self.id]["sell_summary"][
         0
       ]["pricePerUnit"]
       * availableVolume
@@ -363,7 +373,7 @@ class BINBINFlip:
         "buying": {
           "source": BIN,
           "cost": "{:,}".format(self.purchase_for),
-          "details": f"Type /viewauction <span class='auction-id' onclick='document.execCommand(\"copy\")'>{self.auction_id}</span>",
+          "details": f"Type <span class='auction-id' onclick='document.execCommand(\"copy\")'>/viewauction {self.auction_id}</span>",
         },
         "selling": {
           "source": BIN,
