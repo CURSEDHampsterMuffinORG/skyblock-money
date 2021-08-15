@@ -50,6 +50,8 @@ def get_flips(username, auctions):
     "650756055390879757", # Mankifg
     "726685339082817608", # The1And0nlyKevin
     "715566599872053280", # IdiotDev
+    "698189280090259476", # CuteWarriorLover
+    "396315822500478976", # Lakia
   ]
   if not verified_discord:
     print(username, "is not approved")
