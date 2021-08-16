@@ -37,21 +37,21 @@ def get_flips(username, auctions):
     userid = discord.check_code(request.cookies["token"])
   verified_discord = userid in [
     # Close admins/frens
-    "794377681331945524", # KTibow
-    "811220121620054016", # Coder_Ultimate
-    "708004210368839692", # BlueTacoMan
-    "783464370520195072", # Gunsling3r
-    "693834425766641735", # SwiftEagle
+    "794377681331945524",  # KTibow
+    "811220121620054016",  # Coder_Ultimate
+    "708004210368839692",  # BlueTacoMan
+    "783464370520195072",  # Gunsling3r
+    "693834425766641735",  # SwiftEagle
     # Beta testers
-    "715811392090800201", # Coconut BS
-    "358342926851637249", # TheMVAmad
-    "493886910146543616", # Young Joben (OG)
-    "373539975687307266", # Drew
-    "650756055390879757", # Mankifg
-    "726685339082817608", # The1And0nlyKevin
-    "715566599872053280", # IdiotDev
-    "698189280090259476", # CuteWarriorLover
-    "396315822500478976", # Lakia
+    "715811392090800201",  # Coconut BS
+    "358342926851637249",  # TheMVAmad
+    "493886910146543616",  # Young Joben (OG)
+    "373539975687307266",  # Drew
+    "650756055390879757",  # Mankifg
+    "726685339082817608",  # The1And0nlyKevin
+    "715566599872053280",  # IdiotDev
+    "698189280090259476",  # CuteWarriorLover
+    "396315822500478976",  # Lakia
   ]
   if not verified_discord:
     print(username, "is not approved")

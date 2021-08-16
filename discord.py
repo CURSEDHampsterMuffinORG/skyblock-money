@@ -53,7 +53,9 @@ def handle_callback():
   except Exception as e:
     print(e)
     return "<p style='font-family: sans-serif'>Error authing. Try clearing your cookies.</p>"
-  resp = make_response("<p style='font-family: sans-serif'>Token has been saved. <a href='/'>Get flips</a></p>")
+  resp = make_response(
+    "<p style='font-family: sans-serif'>Token has been saved. <a href='/'>Get flips</a></p>"
+  )
   resp.set_cookie("token", json.dumps(token))
   return resp
 

@@ -42,7 +42,7 @@ class User:
         self.ah += requests.get(
           "https://api.hypixel.net/skyblock/auctions",
           headers={"Api-Key": API_KEY},
-          params={"page": i}
+          params={"page": i},
         ).json()["auctions"]
 
 
@@ -103,11 +103,7 @@ class BazaarNPCFlip:
       return
     bazaar_cost = (
       bazaar[self.id]["quick_status"]["buyPrice"] * wantedVolume / totalVolume
-      + bazaar[self.id]["sell_summary"][
-        0
-      ]["pricePerUnit"]
-      * availableVolume
-      / totalVolume
+      + bazaar[self.id]["sell_summary"][0]["pricePerUnit"] * availableVolume / totalVolume
     )
     if bank >= bazaar_cost:
       if bazaar_cost == 0:
@@ -121,12 +117,14 @@ class BazaarNPCFlip:
         "buying": {
           "source": BAZAAR,
           "cost": "{:,}".format(cost),
-          "details": f"{amount_available}x {self.friendly_name}" + f" for {round(bazaar_cost, 1)} each",
+          "details": f"{amount_available}x {self.friendly_name}"
+          + f" for {round(bazaar_cost, 1)} each",
         },
         "selling": {
           "source": NPC,
           "cost": "{:,}".format(money),
-          "details": f"{amount_available}x {self.friendly_name}" + f" for {round(self.npc_sell, 1)} each",
+          "details": f"{amount_available}x {self.friendly_name}"
+          + f" for {round(self.npc_sell, 1)} each",
         },
       }
     else:
@@ -171,7 +169,9 @@ class NPCCraftBazaarFlip:
     bazaar = user.bazaar
     collections = user.user_data["unlocked_coll_tiers"]
     if bank >= self.npc_cost and self.craft_req in collections:
-      amount_available = min(int(bank / self.npc_cost / self.craft_cost), int(640 / self.craft_cost))
+      amount_available = min(
+        int(bank / self.npc_cost / self.craft_cost), int(640 / self.craft_cost)
+      )
       cost = round(self.npc_cost * amount_available * self.craft_cost)
       money = round(bazaar[self.id]["quick_status"]["sellPrice"] * amount_available)
       return {
@@ -258,9 +258,12 @@ class BazaarCraftBazaarFlip:
     totalVolume = availableVolume + wantedVolume
     bazaar_source_cost = (
       bazaar[self.source_id]["quick_status"]["buyPrice"] * wantedVolume / totalVolume
-      + (bazaar[self.source_id]["sell_summary"] or [bazaar[self.source_id]["quick_status"]["buyPrice"],])[
-        0
-      ]["pricePerUnit"]
+      + (
+        bazaar[self.source_id]["sell_summary"]
+        or [
+          bazaar[self.source_id]["quick_status"]["buyPrice"],
+        ]
+      )[0]["pricePerUnit"]
       * availableVolume
       / totalVolume
     )
@@ -270,9 +273,12 @@ class BazaarCraftBazaarFlip:
       totalVolume = availableVolume + wantedVolume
       bazaar_source_cost_2 = (
         bazaar[self.source_id_2]["quick_status"]["buyPrice"] * wantedVolume / totalVolume
-        + (bazaar[self.source_id_2]["sell_summary"] or [bazaar[self.source_id_2]["quick_status"]["buyPrice"],])[
-          0
-        ]["pricePerUnit"]
+        + (
+          bazaar[self.source_id_2]["sell_summary"]
+          or [
+            bazaar[self.source_id_2]["quick_status"]["buyPrice"],
+          ]
+        )[0]["pricePerUnit"]
         * availableVolume
         / totalVolume
       )
@@ -284,9 +290,12 @@ class BazaarCraftBazaarFlip:
       totalVolume = availableVolume + wantedVolume
       bazaar_source_cost_3 = (
         bazaar[self.source_id_3]["quick_status"]["buyPrice"] * wantedVolume / totalVolume
-        + (bazaar[self.source_id_3]["sell_summary"] or [bazaar[self.source_id_3]["quick_status"]["buyPrice"],])[
-          0
-        ]["pricePerUnit"]
+        + (
+          bazaar[self.source_id_3]["sell_summary"]
+          or [
+            bazaar[self.source_id_3]["quick_status"]["buyPrice"],
+          ]
+        )[0]["pricePerUnit"]
         * availableVolume
         / totalVolume
       )
@@ -298,15 +307,18 @@ class BazaarCraftBazaarFlip:
     totalVolume = availableVolume + wantedVolume
     bazaar_crafted_cost = (
       bazaar[self.crafted_id]["quick_status"]["buyPrice"] * availableVolume / totalVolume
-      + (bazaar[self.crafted_id]["sell_summary"] or [bazaar[self.crafted_id]["quick_status"]["buyPrice"],])[
-        0
-      ]["pricePerUnit"]
+      + (
+        bazaar[self.crafted_id]["sell_summary"]
+        or [
+          bazaar[self.crafted_id]["quick_status"]["buyPrice"],
+        ]
+      )[0]["pricePerUnit"]
       * wantedVolume
       / totalVolume
     )
     # Actually calculate
     if bank >= bazaar_source_cost and self.craft_requirement in collections:
-    #if bank >= bazaar_source_cost:
+      # if bank >= bazaar_source_cost:
       amount_available = min(
         int(
           bank
@@ -316,7 +328,9 @@ class BazaarCraftBazaarFlip:
             + bazaar_source_cost_3 * self.craft_cost_3
           )
         ),
-        int(21760 / (self.craft_cost + self.craft_cost_2 + self.craft_cost_3)), # Equivalent of 10 almost-full inventories
+        int(
+          21760 / (self.craft_cost + self.craft_cost_2 + self.craft_cost_3)
+        ),  # Equivalent of 10 almost-full inventories
       )
       cost = round(bazaar_source_cost * amount_available * self.craft_cost)
       money = round(bazaar_crafted_cost * amount_available)
@@ -327,7 +341,8 @@ class BazaarCraftBazaarFlip:
           "source": BAZAAR,
           "cost": "{:,}".format(cost),
           "details": (
-            f"{amount_available * self.craft_cost}x {self.source_name}" + f" for {round(bazaar_source_cost, 1)} each"
+            f"{amount_available * self.craft_cost}x {self.source_name}"
+            + f" for {round(bazaar_source_cost, 1)} each"
           )
           + (
             ""
@@ -345,13 +360,15 @@ class BazaarCraftBazaarFlip:
         "selling": {
           "source": BAZAAR,
           "cost": "{:,}".format(money),
-          "details": f"{amount_available}x {self.crafted_name}" + f" for {round(bazaar_crafted_cost, 1)} each",
+          "details": f"{amount_available}x {self.crafted_name}"
+          + f" for {'{:,}'.format(round(bazaar_crafted_cost, 1))} each",
         },
       }
     elif bank >= bazaar_source_cost:
       print("Cannot craft", self.crafted_name)
     else:
       print(self.source_name, "is unaffordable")
+
 
 class BINBINFlip:
   def __init__(self, auction_data):
@@ -365,6 +382,7 @@ class BINBINFlip:
     if self.real_price_minus_tax:
       self.real_price_minus_tax *= 0.95
       self.real_price_minus_tax -= 100
+
   def checkFlip(self, user):
     if self.real_price and self.purchase_for <= user.bank:
       return {
@@ -381,6 +399,7 @@ class BINBINFlip:
           "details": f"Sell the item as a BIN with a starting bid of {'{:,}'.format(round(self.real_price))} for 12 hours",
         },
       }
+
 
 def construct_bin_flips(user):
   bin_flips = []

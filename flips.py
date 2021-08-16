@@ -173,7 +173,9 @@ for type in gemstone_types:
   flips.append(BazaarNPCFlip(f"Rough {type.capitalize()} Gemstone", 8, id=f"ROUGH_{type}_GEM"))
   flips.append(BazaarNPCFlip(f"Flawed {type.capitalize()} Gemstone", 640, id=f"FLAWED_{type}_GEM"))
   flips.append(BazaarNPCFlip(f"Fine {type.capitalize()} Gemstone", 25600, id=f"FINE_{type}_GEM"))
-  flips.append(BazaarNPCFlip(f"Flawless {type.capitalize()} Gemstone", 512000, id=f"FLAWLESS_{type}_GEM"))
+  flips.append(
+    BazaarNPCFlip(f"Flawless {type.capitalize()} Gemstone", 512000, id=f"FLAWLESS_{type}_GEM")
+  )
   # Tell me in the Discord if you know how much Perfect sells to NPCs for
 more_flips = [
   # Emerald
@@ -823,18 +825,37 @@ more_flips = [
   # Mushrooms
   BazaarCraftBazaarFlip("Red Mushroom", 160, "MUSHROOM_COLLECTION_6", "Enchanted Red Mushroom"),
   BazaarCraftBazaarFlip("Red Mushroom", 9, "MUSHROOM_COLLECTION_5", "Red Mushroom Block"),
-  BazaarCraftBazaarFlip("Red Mushroom", 5184, "MUSHROOM_COLLECTION_8", "Enchanted Red Mushroom Block"),
-  BazaarCraftBazaarFlip("Red Mushroom Block", 576, "MUSHROOM_COLLECTION_8", "Enchanted Red Mushroom Block"),
+  BazaarCraftBazaarFlip(
+    "Red Mushroom", 5184, "MUSHROOM_COLLECTION_8", "Enchanted Red Mushroom Block"
+  ),
+  BazaarCraftBazaarFlip(
+    "Red Mushroom Block", 576, "MUSHROOM_COLLECTION_8", "Enchanted Red Mushroom Block"
+  ),
   BazaarCraftBazaarFlip("Brown Mushroom", 160, "MUSHROOM_COLLECTION_6", "Enchanted Brown Mushroom"),
   BazaarCraftBazaarFlip("Brown Mushroom", 9, "MUSHROOM_COLLECTION_5", "Brown Mushroom Block"),
-  BazaarCraftBazaarFlip("Brown Mushroom", 5184, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"),
-  BazaarCraftBazaarFlip("Brown Mushroom Block", 576, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"),
+  BazaarCraftBazaarFlip(
+    "Brown Mushroom", 5184, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"
+  ),
+  BazaarCraftBazaarFlip(
+    "Brown Mushroom Block", 576, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"
+  ),
   # Cocoa
   BazaarCraftBazaarFlip("Cocoa Beans", 160, "INK_SACK:3_4", "Enchanted Cocoa Bean"),
-  BazaarCraftBazaarFlip("Enchanted Cocoa Bean", 128, "INK_SACK:3_6", "Enchanted Cookie", source_name_2="Wheat", craft_cost_2=32),
+  BazaarCraftBazaarFlip(
+    "Enchanted Cocoa Bean",
+    128,
+    "INK_SACK:3_6",
+    "Enchanted Cookie",
+    source_name_2="Wheat",
+    craft_cost_2=32,
+  ),
   # Cacti
-  BazaarCraftBazaarFlip("Cactus", 160, "CACTUS_4", "Enchanted Cactus Green", source_name_2="Coal", craft_cost_2=20),
-  BazaarCraftBazaarFlip("Cactus", 25600, "CACTUS_8", "Enchanted Cactus", source_name_2="Coal", craft_cost_2=3200),
+  BazaarCraftBazaarFlip(
+    "Cactus", 160, "CACTUS_4", "Enchanted Cactus Green", source_name_2="Coal", craft_cost_2=20
+  ),
+  BazaarCraftBazaarFlip(
+    "Cactus", 25600, "CACTUS_8", "Enchanted Cactus", source_name_2="Coal", craft_cost_2=3200
+  ),
   BazaarCraftBazaarFlip("Enchanted Cactus Green", 160, "CACTUS_8", "Enchanted Cactus"),
   # Sugar Cane
   BazaarCraftBazaarFlip("Sugar Cane", 160, "SUGAR_CANE_4", "Enchanted Sugar"),
@@ -849,7 +870,157 @@ more_flips = [
   BazaarCraftBazaarFlip("Raw Porkchop", 25600, "PORK_7", "Enchanted Grilled Pork"),
   BazaarCraftBazaarFlip("Enchanted Pork", 160, "PORK_7", "Enchanted Grilled Pork"),
   # Chicken
-  #BazaarCraftBazaarFlip("Raw Chicken", 160, "RAW_CHICKEN_4", "Enchanted Raw Chicken"),
-  #BazaarCraftBazaarFlip("Raw Chicken", 160, "RAW_CHICKEN_4", "Enchanted Raw Chicken"),
+  BazaarCraftBazaarFlip("Raw Chicken", 160, "RAW_CHICKEN_4", "Enchanted Raw Chicken"),
+  BazaarCraftBazaarFlip(
+    "Enchanted Egg",
+    1,
+    "RAW_CHICKEN_7",
+    "Enchanted Cake",
+    source_name_2="Enchanted Sugar",
+    craft_cost_2=2,
+    source_name_3="Wheat",
+    craft_cost_3=3,
+  ),
+  BazaarCraftBazaarFlip("Enchanted Egg", 144, "RAW_CHICKEN_9", "Super Enchanted Egg"),
+  BazaarCraftBazaarFlip("Feather", 160, "FEATHER_5", "Enchanted Feather"),
+  # Mutton
+  BazaarCraftBazaarFlip("Mutton", 160, "MUTTON_5", "Enchanted Mutton"),
+  BazaarCraftBazaarFlip("Mutton", 25600, "MUTTON_8", "Enchanted Cooked Mutton"),
+  BazaarCraftBazaarFlip("Enchanted Mutton", 160, "MUTTON_8", "Enchanted Cooked Mutton"),
+  # Rabbit
+  BazaarCraftBazaarFlip("Raw Rabbit", 160, "RAW_RABBIT_-1", "Enchanted Raw Rabbit"),
+  BazaarCraftBazaarFlip("Rabbit's Foot", 160, "RAW_RABBIT_4", "Enchanted Rabbit Foot"),
+  BazaarCraftBazaarFlip("Rabbit Hide", 576, "RAW_RABBIT_6", "Enchanted Rabbit Hide"),
+  # Nether Wart
+  BazaarCraftBazaarFlip("Nether Wart", 160, "NETHER_STALK_4", "Enchanted Nether Wart"),
+  BazaarCraftBazaarFlip("Nether Wart", 25600, "NETHER_STALK_12", "Mutant Nether Wart", crafted_id="MUTANT_NETHER_STALK"),
+  BazaarCraftBazaarFlip("Enchanted Nether Wart", 160, "NETHER_STALK_12", "Mutant Nether Wart", crafted_id="MUTANT_NETHER_STALK"),
+  ####################################
+  #########      Mining      #########
+  ####################################
+  # Cobblestone
+  BazaarCraftBazaarFlip("Cobblestone", 160, "COBBLESTONE_4", "Enchanted Cobblestone"),
+  # Coal
+  BazaarCraftBazaarFlip("Coal", 160, "COAL_4", "Enchanted Coal"),
+  BazaarCraftBazaarFlip(
+    "Coal", 20480, "COAL_5", "Enchanted Charcoal", source_name_2="Oak Wood", craft_cost_2=32
+  ),
+  BazaarCraftBazaarFlip(
+    "Enchanted Coal", 128, "COAL_5", "Enchanted Charcoal", source_name_2="Oak Wood", craft_cost_2=32
+  ),
+  BazaarCraftBazaarFlip("Coal", 25600, "COAL_7", "Enchanted Block Of Coal", crafted_id="ENCHANTED_COAL_BLOCK"),
+  BazaarCraftBazaarFlip("Enchanted Coal", 160, "COAL_7", "Enchanted Block Of Coal", crafted_id="ENCHANTED_COAL_BLOCK"),
+  # Iron
+  BazaarCraftBazaarFlip("Iron Ingot", 160, "IRON_INGOT_4", "Enchanted Iron"),
+  BazaarCraftBazaarFlip("Iron Ingot", 25600, "IRON_INGOT_7", "Enchanted Iron Block"),
+  BazaarCraftBazaarFlip("Enchanted Iron", 160, "IRON_INGOT_7", "Enchanted Iron Block"),
+  # Gold
+  BazaarCraftBazaarFlip("Gold Ingot", 160, "GOLD_INGOT_5", "Enchanted Gold"),
+  BazaarCraftBazaarFlip("Gold Ingot", 25600, "GOLD_INGOT_8", "Enchanted Gold Block"),
+  BazaarCraftBazaarFlip("Enchanted Gold", 160, "GOLD_INGOT_8", "Enchanted Gold Block"),
+  # Diamond
+  BazaarCraftBazaarFlip("Diamond", 160, "DIAMOND_4", "Enchanted Diamond"),
+  BazaarCraftBazaarFlip("Diamond", 25600, "DIAMOND_8", "Enchanted Diamond Block"),
+  BazaarCraftBazaarFlip("Enchanted Diamond", 160, "DIAMOND_8", "Enchanted Diamond Block"),
+  # Lapis Lazuli
+  BazaarCraftBazaarFlip("Lapis Lazuli", 160, "INK_SACK:4_4", "Enchanted Lapis Lazuli"),
+  BazaarCraftBazaarFlip("Lapis Lazuli", 25600, "INK_SACK:4_7", "Enchanted Lapis Lazuli Block"),
+  BazaarCraftBazaarFlip(
+    "Enchanted Lapis Lazuli", 160, "INK_SACK:4_7", "Enchanted Lapis Lazuli Block"
+  ),
+  # Emerald
+  BazaarCraftBazaarFlip("Emerald", 160, "EMERALD_4", "Enchanted Emerald"),
+  BazaarCraftBazaarFlip("Emerald", 25600, "EMERALD_7", "Enchanted Emerald Block"),
+  BazaarCraftBazaarFlip("Enchanted Emerald", 160, "EMERALD_7", "Enchanted Emerald Block"),
+  # Redstone
+  BazaarCraftBazaarFlip("Redstone", 160, "REDSTONE_4", "Enchanted Redstone"),
+  BazaarCraftBazaarFlip("Redstone", 25600, "REDSTONE_8", "Enchanted Redstone Block"),
+  BazaarCraftBazaarFlip("Enchanted Redstone", 160, "REDSTONE_8", "Enchanted Redstone Block"),
+  # Quartz
+  BazaarCraftBazaarFlip("Quartz", 160, "QUARTZ_4", "Enchanted Quartz"),
+  BazaarCraftBazaarFlip("Quartz", 25600, "QUARTZ_6", "Enchanted Quartz Block"),
+  BazaarCraftBazaarFlip("Enchanted Quartz", 160, "QUARTZ_6", "Enchanted Quartz Block"),
+  # Obsidian
+  BazaarCraftBazaarFlip("Obsidian", 160, "OBSIDIAN_4", "Enchanted Obsidian"),
+  # Glowstone
+  BazaarCraftBazaarFlip("Glowstone Dust", 160, "GLOWSTONE_4", "Enchanted Glowstone Dust"),
+  BazaarCraftBazaarFlip("Glowstone Dust", 30720, "GLOWSTONE_6", "Enchanted Glowstone"),
+  BazaarCraftBazaarFlip("Enchanted Glowstone Dust", 192, "GLOWSTONE_6", "Enchanted Glowstone"),
+  BazaarCraftBazaarFlip(
+    "Enchanted Glowstone Dust",
+    32,
+    "GLOWSTONE_7",
+    "Enchanted Redstone Lamp",
+    source_name_2="Enchanted Redstone",
+    craft_cost_2=128,
+  ),
+  BazaarCraftBazaarFlip(
+    "Enchanted Glowstone",
+    160,
+    "GLOWSTONE_7",
+    "Enchanted Redstone Lamp",
+    source_name_2="Enchanted Redstone",
+    craft_cost_2=128,
+  ),
+  # Gravel
+  BazaarCraftBazaarFlip("Flint", 160, "GRAVEL_5", "Enchanted Flint"),
+  # Ice
+  BazaarCraftBazaarFlip("Ice", 9, "ICE_-1", "Packed Ice"),
+  BazaarCraftBazaarFlip("Ice", 160, "ICE_5", "Enchanted Ice"),
+  BazaarCraftBazaarFlip("Enchanted Ice", 160, "ICE_7", "Enchanted Packed Ice"),
+  # Netherrack
+  BazaarCraftBazaarFlip("Netherrack", 160, "BLOODSTONE_4", "Enchanted Netherrack"),
+  # Sand
+  BazaarCraftBazaarFlip("Sand", 160, "SAND_5", "Enchanted Sand"),
+  # Endstone
+  BazaarCraftBazaarFlip("End Stone", 160, "ENDER_STONE_4", "Enchanted End Stone"),
+  # Mithril
+  BazaarCraftBazaarFlip("Mithril", 160, "MITHRIL_3", "Enchanted Mithril", source_id="MITHRIL_ORE"),
+  BazaarCraftBazaarFlip("Titanium", 160, "MITHRIL_-1", "Enchanted Titanium", source_id="TITANIUM_ORE"),
+  # Hardstone
+  BazaarCraftBazaarFlip("Hard Stone", 576, "HARD_STONE_3", "Enchanted Hard Stone"),
+  BazaarCraftBazaarFlip("Enchanted Hard Stone", 576, "HARD_STONE_6", "Concentrated Stone"),
 ]
 flips += more_flips
+gemstone_types = ["RUBY", "AMETHYST", "JADE", "SAPPHIRE", "AMBER", "TOPAZ", "JASPER"]
+for type in gemstone_types:
+  flips.append(
+    BazaarCraftBazaarFlip(
+      f"Rough {type.capitalize()}",
+      80,
+      "GEMSTONE_COLLECTION_2",
+      f"Flawed {type.capitalize()}",
+      source_id=f"ROUGH_{type}_GEM",
+      crafted_id=f"FLAWED_{type}_GEM",
+    )
+  )
+  flips.append(
+    BazaarCraftBazaarFlip(
+      f"Flawed {type.capitalize()}",
+      80,
+      "GEMSTONE_COLLECTION_5",
+      f"Fine {type.capitalize()}",
+      source_id=f"FLAWED_{type}_GEM",
+      crafted_id=f"FINE_{type}_GEM",
+    )
+  )
+  flips.append(
+    BazaarCraftBazaarFlip(
+      f"Fine {type.capitalize()}",
+      80,
+      "GEMSTONE_COLLECTION_9",
+      f"Flawless {type.capitalize()}",
+      source_id=f"FINE_{type}_GEM",
+      crafted_id=f"FLAWLESS_{type}_GEM",
+    )
+  )
+  flips.append(
+    BazaarCraftBazaarFlip(
+      f"Flawless {type.capitalize()}",
+      5,
+      "GEMSTONE_COLLECTION_10",
+      f"Perfect {type.capitalize()}",
+      source_id=f"FLAWLESS_{type}_GEM",
+      crafted_id=f"PERFECT_{type}_GEM",
+    )
+  )
