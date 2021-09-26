@@ -21,10 +21,10 @@ class User:
     )
     self.uuid = uuid
     if len(profiles.json()["profiles"]) > 1:
-    self.profiles = max(
-      profiles.json()["profiles"],
-      key=lambda prof: prof["members"][uuid]["last_save"],
-    )
+      self.profiles = max(
+        profiles.json()["profiles"],
+        key=lambda prof: prof["members"][uuid]["last_save"],
+      )
     else:
       self.profiles = profiles.json()["profiles"][0]
     self.user_data = self.profiles["members"][self.uuid]
