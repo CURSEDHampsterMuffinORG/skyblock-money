@@ -39,7 +39,7 @@ flips = [
   NPCBazaarFlip("Raw Salmon", "RAW_FISH:1", 30, "Fish Merchant nearby the Pond"),
   NPCBazaarFlip("Clownfish", "RAW_FISH:2", 100, "Fish Merchant nearby the Pond"),
   # Builder
-  NPCBazaarFlip("Sand", "SAND", 1, "Builder in the Builder's House"),
+  NPCBazaarFlip("Sand", "SAND", 2, "Builder in the Builder's House"),
   NPCBazaarFlip("Ice", "ICE", 1, "Builder in the Builder's House"),
   NPCBazaarFlip("Packed Ice", "PACKED_ICE", 9, "Builder in the Builder's House"),
   NPCBazaarFlip(
@@ -170,12 +170,11 @@ flips = [
 ]
 gemstone_types = ["RUBY", "AMETHYST", "JADE", "SAPPHIRE", "AMBER", "TOPAZ", "JASPER"]
 for type in gemstone_types:
-  flips.append(BazaarNPCFlip(f"Rough {type.capitalize()} Gemstone", 8, id=f"ROUGH_{type}_GEM"))
-  flips.append(BazaarNPCFlip(f"Flawed {type.capitalize()} Gemstone", 640, id=f"FLAWED_{type}_GEM"))
+  flips.append(BazaarNPCFlip(f"Rough {type.capitalize()} Gemstone", 4, id=f"ROUGH_{type}_GEM"))
+  flips.append(BazaarNPCFlip(f"Flawed {type.capitalize()} Gemstone", 320, id=f"FLAWED_{type}_GEM"))
   flips.append(BazaarNPCFlip(f"Fine {type.capitalize()} Gemstone", 25600, id=f"FINE_{type}_GEM"))
-  flips.append(
-    BazaarNPCFlip(f"Flawless {type.capitalize()} Gemstone", 512000, id=f"FLAWLESS_{type}_GEM")
-  )
+  flips.append(BazaarNPCFlip(f"Flawless {type.capitalize()} Gemstone", 2048000, id=f"FLAWLESS_{type}_GEM"))
+  flips.append(BazaarNPCFlip(f"Perfect {type.capitalize()} Gemstone", 10240000, id=f"PERFECT_{type}_GEM"))
   # Tell me in the Discord if you know how much Perfect sells to NPCs for
 more_flips = [
   # Emerald
@@ -825,37 +824,18 @@ more_flips = [
   # Mushrooms
   BazaarCraftBazaarFlip("Red Mushroom", 160, "MUSHROOM_COLLECTION_6", "Enchanted Red Mushroom"),
   BazaarCraftBazaarFlip("Red Mushroom", 9, "MUSHROOM_COLLECTION_5", "Red Mushroom Block"),
-  BazaarCraftBazaarFlip(
-    "Red Mushroom", 5184, "MUSHROOM_COLLECTION_8", "Enchanted Red Mushroom Block"
-  ),
-  BazaarCraftBazaarFlip(
-    "Red Mushroom Block", 576, "MUSHROOM_COLLECTION_8", "Enchanted Red Mushroom Block"
-  ),
+  BazaarCraftBazaarFlip("Red Mushroom", 5184, "MUSHROOM_COLLECTION_8", "Enchanted Red Mushroom Block"),
+  BazaarCraftBazaarFlip("Red Mushroom Block", 576, "MUSHROOM_COLLECTION_8", "Enchanted Red Mushroom Block"),
   BazaarCraftBazaarFlip("Brown Mushroom", 160, "MUSHROOM_COLLECTION_6", "Enchanted Brown Mushroom"),
   BazaarCraftBazaarFlip("Brown Mushroom", 9, "MUSHROOM_COLLECTION_5", "Brown Mushroom Block"),
-  BazaarCraftBazaarFlip(
-    "Brown Mushroom", 5184, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"
-  ),
-  BazaarCraftBazaarFlip(
-    "Brown Mushroom Block", 576, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"
-  ),
+  BazaarCraftBazaarFlip("Brown Mushroom", 5184, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"),
+  BazaarCraftBazaarFlip("Brown Mushroom Block", 576, "MUSHROOM_COLLECTION_8", "Enchanted Brown Mushroom Block"),
   # Cocoa
   BazaarCraftBazaarFlip("Cocoa Beans", 160, "INK_SACK:3_4", "Enchanted Cocoa Bean"),
-  BazaarCraftBazaarFlip(
-    "Enchanted Cocoa Bean",
-    128,
-    "INK_SACK:3_6",
-    "Enchanted Cookie",
-    source_name_2="Wheat",
-    craft_cost_2=32,
-  ),
+  BazaarCraftBazaarFlip("Enchanted Cocoa Bean", 128, "INK_SACK:3_6", "Enchanted Cookie", source_name_2="Wheat", craft_cost_2=32),
   # Cacti
-  BazaarCraftBazaarFlip(
-    "Cactus", 160, "CACTUS_4", "Enchanted Cactus Green", source_name_2="Coal", craft_cost_2=20
-  ),
-  BazaarCraftBazaarFlip(
-    "Cactus", 25600, "CACTUS_8", "Enchanted Cactus", source_name_2="Coal", craft_cost_2=3200
-  ),
+  BazaarCraftBazaarFlip("Cactus", 160, "CACTUS_4", "Enchanted Cactus Green", source_name_2="Coal", craft_cost_2=20),
+  BazaarCraftBazaarFlip("Cactus", 25600, "CACTUS_8", "Enchanted Cactus", source_name_2="Coal", craft_cost_2=3200),
   BazaarCraftBazaarFlip("Enchanted Cactus Green", 160, "CACTUS_8", "Enchanted Cactus"),
   # Sugar Cane
   BazaarCraftBazaarFlip("Sugar Cane", 160, "SUGAR_CANE_4", "Enchanted Sugar"),

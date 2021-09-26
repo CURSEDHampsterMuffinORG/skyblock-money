@@ -20,10 +20,13 @@ class User:
       headers={"Api-Key": API_KEY},
     )
     self.uuid = uuid
+    if len(profiles.json()["profiles"]) > 1:
     self.profiles = max(
       profiles.json()["profiles"],
       key=lambda prof: prof["members"][uuid]["last_save"],
     )
+    else:
+      self.profiles = profiles.json()["profiles"][0]
     self.user_data = self.profiles["members"][self.uuid]
     self.bank = self.profiles["banking"]["balance"] + self.user_data["coin_purse"]
     self.bazaar = requests.get(
@@ -107,7 +110,7 @@ class BazaarNPCFlip:
     )
     if bank >= bazaar_cost:
       if bazaar_cost == 0:
-        print(self.id)
+        print(self.id, bazaar[self.id]["quick_status"]["buyPrice"], totalVolume)
       amount_available = min(int(bank / bazaar_cost), 2240)
       cost = round(bazaar_cost * amount_available)
       money = round(self.npc_sell * amount_available)
@@ -369,7 +372,6 @@ class BazaarCraftBazaarFlip:
     else:
       print(self.source_name, "is unaffordable")
 
-
 class BINBINFlip:
   def __init__(self, auction_data):
     self.item_name = auction_data["item_name"]
@@ -382,7 +384,6 @@ class BINBINFlip:
     if self.real_price_minus_tax:
       self.real_price_minus_tax *= 0.95
       self.real_price_minus_tax -= 100
-
   def checkFlip(self, user):
     if self.real_price and self.purchase_for <= user.bank:
       return {
@@ -399,7 +400,6 @@ class BINBINFlip:
           "details": f"Sell the item as a BIN with a starting bid of {'{:,}'.format(round(self.real_price))} for 12 hours",
         },
       }
-
 
 def construct_bin_flips(user):
   bin_flips = []
