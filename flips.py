@@ -670,9 +670,9 @@ more_flips = [
   ),
   NPCCraftBazaarFlip(
     "Packed Ice",
-    "Enchanted Packed Ice",
+    "Enchanted Ice",
     "ICE_7",
-    160,
+    160 / 9,
     "ENCHANTED_PACKED_ICE",
     9,
     "Builder in the Builder's House",

@@ -61,9 +61,15 @@ def get_flips(username, auctions):
     "508935139171106816", # CrazyNinjaCan15
     "535805599414484992", # Alkif
     "706886804028260363", # casual_gamer_256
+    "712257445912903721", # TheMultiTasker
+    "160664736332120065", # Cubic
+    "225944599452057600", # Raymond
+    "687888328611332118", # Duck
   ]
   if not verified_discord:
     print(username, "is not approved")
+    if userid != "":
+      print(userid)
     calculated_flips.append(
       {
         "item": "This user is not approved yet.",

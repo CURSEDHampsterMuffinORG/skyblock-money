@@ -264,7 +264,7 @@ class BazaarCraftBazaarFlip:
       + (
         bazaar[self.source_id]["sell_summary"]
         or [
-          bazaar[self.source_id]["quick_status"]["buyPrice"],
+          {"pricePerUnit": bazaar[self.source_id]["quick_status"]["buyPrice"]},
         ]
       )[0]["pricePerUnit"]
       * availableVolume
