@@ -39,7 +39,7 @@ document.querySelector("#card5 button.back").onclick = () => {
     window.location = "[discord url here]";
   }
   
-  if (document.cookie != "") {
+  if (document.cookie.includes("token")) {
     document.querySelector("#card1 button.auth").innerHTML = "Copy auth token";
     document.querySelector("#card1 button.auth").onclick = () => {
       navigator.clipboard.writeText(document.cookie);
