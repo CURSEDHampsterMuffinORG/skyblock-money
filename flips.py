@@ -173,8 +173,8 @@ for type in gemstone_types:
   flips.append(BazaarNPCFlip(f"Rough {type.capitalize()} Gemstone", 4, id=f"ROUGH_{type}_GEM"))
   flips.append(BazaarNPCFlip(f"Flawed {type.capitalize()} Gemstone", 320, id=f"FLAWED_{type}_GEM"))
   flips.append(BazaarNPCFlip(f"Fine {type.capitalize()} Gemstone", 25600, id=f"FINE_{type}_GEM"))
-  flips.append(BazaarNPCFlip(f"Flawless {type.capitalize()} Gemstone", 2048000, id=f"FLAWLESS_{type}_GEM"))
-  flips.append(BazaarNPCFlip(f"Perfect {type.capitalize()} Gemstone", 10240000, id=f"PERFECT_{type}_GEM"))
+  #flips.append(BazaarNPCFlip(f"Flawless {type.capitalize()} Gemstone", 2048000, id=f"FLAWLESS_{type}_GEM"))
+  #flips.append(BazaarNPCFlip(f"Perfect {type.capitalize()} Gemstone", 10240000, id=f"PERFECT_{type}_GEM"))
   # Tell me in the Discord if you know how much Perfect sells to NPCs for
 more_flips = [
   # Emerald
